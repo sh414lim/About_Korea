@@ -33,7 +33,7 @@ export default function Home() {
     axios
       .post("http://localhost:8000/user", params)
       .then((res) => {
-        console.log(res);
+        console.log(res.data.ok);
       })
       .catch((error) => {
         console.log(error);
