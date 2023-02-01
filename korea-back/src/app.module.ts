@@ -8,9 +8,28 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
 import { User } from './user/entities/user.entity';
 import { JwtModule } from './jwt/jwt.module';
+import { ConfigModule } from '@nestjs/config';
+import * as Joi from 'joi';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: process.env.NODE_ENV === 'dev' ? '.env.dev' : '.env.test',
+      ignoreEnvFile: process.env.NODE_ENV === 'prod',
+      validationSchema: Joi.object({
+        NODE_ENV: Joi.string().valid('dev', 'prod').required(),
+        DB_HOST: Joi.string().required(),
+        DB_PORT: Joi.string().required(),
+        DB_USERNAME: Joi.string().required(),
+        DB_PASSWORD: Joi.string().required(),
+        DB_NAME: Joi.string().required(),
+        PRIVATE_KEY: Joi.string().required(),
+        // MAILGUN_API_KEY: Joi.string().required(),
+        // FROM_EMAIL: Joi.string().required(),
+        // MAILGUN_DOMAIN_NAME: Joi.string().required(),
+      }),
+    }),
     UserModule,
     GraphQLModule.forRoot({
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
@@ -27,7 +46,9 @@ import { JwtModule } from './jwt/jwt.module';
       logging: true,
       entities: [User],
     }),
-    JwtModule,
+    JwtModule.forRoot({
+      privateKey: process.env.PRIVATE_KEY,
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],
