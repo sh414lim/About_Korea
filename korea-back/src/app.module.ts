@@ -7,6 +7,7 @@ import { ApolloDriver } from '@nestjs/apollo';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
 import { User } from './user/entities/user.entity';
+import { JwtModule } from './jwt/jwt.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { User } from './user/entities/user.entity';
       logging: true,
       entities: [User],
     }),
+    JwtModule,
   ],
   controllers: [AppController],
   providers: [AppService],

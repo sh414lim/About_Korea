@@ -33,7 +33,11 @@ export default function Home() {
     axios
       .post("http://localhost:8000/user", params)
       .then((res) => {
+        let isSuccess = res.data.ok;
         console.log(res.data.ok);
+        console.log(res);
+        if (isSuccess) {
+        }
       })
       .catch((error) => {
         console.log(error);

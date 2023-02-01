@@ -21,9 +21,18 @@ export class UserService {
   }: CreateAccountInput): Promise<CreateAccountOutput> {
     try {
       const exists = await this.user.findOne({ where: { email } });
+
+      if (exists) {
+        return {
+          ok: false,
+          error: '현재 이메일로 가입한 계정이 존재합니다',
+        };
+      }
+
       const users = await this.user.save(
         this.user.create({ email, password, country }),
       );
+
       return {
         ok: true,
       };
