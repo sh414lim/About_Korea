@@ -61,7 +61,7 @@ export default function Login() {
             <SignInput type="text" placeholder="E-Mail" />
           </InputItem>
           <InputItem>
-            <SignInput type="text" placeholder="PASSWORD" />
+            <SignInput type="password" placeholder="PASSWORD" />
           </InputItem>
         </InputGroup>
       </Box>
@@ -70,9 +70,7 @@ export default function Login() {
           <img
             src="https://developers.google.com/static/identity/images/btn_google_signin_light_normal_web.png?hl=ko"
             width="200"
-            // alt="카카오 로그인 버튼"
           />
-          {/* <GoogleLogin clientId={authKey.googleKey} buttonText="Google Login" /> */}
         </AuthButton>
         <AuthButton>
           <img
