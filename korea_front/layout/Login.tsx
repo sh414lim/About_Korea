@@ -127,7 +127,7 @@ const AuthImg = styled.img`
 `;
 
 export default function Login() {
-  const [inputMode, setInputMODE]: boolean = useState(true);
+  const [inputMode, setInputMODE] = useState(true);
 
   const authKey = {
     googleKey: process.env.GOOGLE_LOGIN_CLIENT_ID,

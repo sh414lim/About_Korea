@@ -9,7 +9,7 @@ const nextConfig = {
     return [
       {
         source: "/:path*",
-        destination: "http://localhost:8001/:path*",
+        destination: "http://localhost:8000/:path*",
       },
     ];
   },

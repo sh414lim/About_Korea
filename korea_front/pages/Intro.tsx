@@ -4,7 +4,7 @@ import Login from "../layout/Login";
 
 const Container = styled.div`
   /* background-color: red; */
-  margin: 100px 0px 0px 0px;
+  margin: 50px 0px 0px 0px;
 `;
 const Title = styled.h1`
   font-size: 100px;
@@ -49,7 +49,7 @@ const SubTitle = styled.span`
   }
 `;
 
-const Back = styled.button``;
+const VideoContainer = styled.div``;
 
 export default function Intro() {
   return (
@@ -57,6 +57,16 @@ export default function Intro() {
       <Title>About KOREA</Title>
       <SubTitle>Korean daily life tutorial.</SubTitle>
       <Login />
+      <VideoContainer>
+        {/* <VideoPlayer
+          className="video"
+          src={
+            "https://player.vimeo.com/external/435674703.sd.mp4?s=01ad1ba21dc72c1d34728e1b77983805b34daad7&profile_id=165&oauth2_token_id=57447761"
+          }
+          autoPlay={true}
+          muted={true}
+        /> */}
+      </VideoContainer>
     </Container>
   );
 }

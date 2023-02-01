@@ -3,6 +3,7 @@ import styled from "styled-components";
 import GoogleLogin from "react-google-login";
 import Link from "next/link";
 import { RequestloginApi } from "../pages/api/auth/api";
+import { useRouter } from "next/router";
 
 const Box = styled.div`
   display: flex;
@@ -34,7 +35,7 @@ const SignInput = styled.input`
   height: 60px;
   margin: 10px;
   border-radius: 10px;
-  border: none;
+  border: 1px solid gray;
   @media ${(props) => props.theme.mobile} {
     font-size: 15px;
     width: 180px;
@@ -73,7 +74,6 @@ const SignUpButton = styled.button`
   }
   @media ${(props) => props.theme.mobile} {
     width: 90%;
-
     height: 30px;
     margin: 5px 0px 0px 8px;
     font-size: 12px;
@@ -85,11 +85,14 @@ export default function LoginInput({ setInputMode }) {
   const [Upassword, setpassword] = useState("");
   const [token, setToken] = useState("");
 
+  const router = useRouter();
+
   const handleSignUp = () => {
     RequestloginApi(Uemail, Upassword)
       .then((res) => {
         console.log(res);
         setToken(res.token);
+        router.push("/main/introduce");
       })
       .catch((err) => {
         console.log(err, 77);
