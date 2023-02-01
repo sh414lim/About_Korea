@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Intro from "./Intro";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -64,7 +65,8 @@ export default function Home() {
 
   return (
     <>
-      <h1>123</h1>
+      <Intro />
+      {/* <h1>123</h1>
       <input
         type="text"
         placeholder="email"
@@ -104,7 +106,7 @@ export default function Home() {
           }}
         />
         <button onClick={onLogin}>로그인</button>
-      </div>
+      </div> */}
     </>
   );
 }
