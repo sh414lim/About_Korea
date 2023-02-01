@@ -11,6 +11,8 @@ export default function Home() {
   const [ema, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
   const [cy, setCy] = useState("");
+  const [loginEma, setLoginEma] = useState("");
+  const [loginPwd, setLoginPwd] = useState("");
 
   useEffect(() => {
     axios.get("http://localhost:8000/user").then(({ data }) => {
@@ -22,6 +24,22 @@ export default function Home() {
   useEffect(() => {
     console.log(ema, pwd);
   }, [ema]);
+
+  const onLogin = () => {
+    const params = {
+      email: loginEma,
+      password: loginPwd,
+    };
+    axios
+      .post("http://localhost:8000/user/login", params)
+      .then((res) => {
+        let isSuccess = res.data;
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const onPost = () => {
     const params = {
@@ -69,6 +87,24 @@ export default function Home() {
         }}
       />
       <button onClick={onPost}>전송</button>
+
+      <div>
+        <input
+          type="text"
+          placeholder="login email"
+          onChange={(e) => {
+            setLoginEma(e.target.value);
+          }}
+        />
+        <input
+          type="texdt"
+          placeholder="login pwd"
+          onChange={(e) => {
+            setLoginPwd(e.target.value);
+          }}
+        />
+        <button onClick={onLogin}>로그인</button>
+      </div>
     </>
   );
 }
