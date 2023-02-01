@@ -9,6 +9,11 @@ interface test {
   country: string;
 }
 
+interface Ilogin {
+  email: string;
+  password: string;
+}
+
 @Controller('user')
 export class UserController {
   constructor(private readonly userSservice: UserService) {}
@@ -20,5 +25,10 @@ export class UserController {
   @Post()
   create(@Body() params: test) {
     return this.userSservice.createUser(params);
+  }
+
+  @Post('/login')
+  login(@Body() params: Ilogin) {
+    return this.userSservice.login(params);
   }
 }
