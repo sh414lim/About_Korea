@@ -14,3 +14,11 @@ const theme = {
 };
 
 export default theme;
+// @media ${(props) => props.theme.laptop} {
+// }
+
+// @media ${(props) => props.theme.tablet} {
+// }
+
+// @media ${(props) => props.theme.mobile} {
+// }

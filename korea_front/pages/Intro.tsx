@@ -7,26 +7,55 @@ const Container = styled.div`
   margin: 100px 0px 0px 0px;
 `;
 const Title = styled.h1`
-  /* @media ${(props) => props.theme.desktop} {
-    color: blue;
-  } */
-  font-size: 130px;
+  font-size: 100px;
   display: flex;
   color: black;
   justify-content: center;
   align-items: center;
   align-content: center;
 
+  @media ${(props) => props.theme.laptop} {
+    font-size: 80px;
+  }
+
+  @media ${(props) => props.theme.tablet} {
+    font-size: 50px;
+  }
+
   @media ${(props) => props.theme.mobile} {
-    color: red;
     font-size: 35px;
   }
 `;
 
+const SubTitle = styled.span`
+  font-size: 40px;
+  display: flex;
+  color: black;
+  top: 0;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  @media ${(props) => props.theme.laptop} {
+    font-size: 30px;
+  }
+
+  @media ${(props) => props.theme.tablet} {
+    font-size: 20px;
+  }
+
+  @media ${(props) => props.theme.mobile} {
+    color: black;
+    font-size: 20px;
+  }
+`;
+
+const Back = styled.button``;
+
 export default function Intro() {
   return (
     <Container>
-      <Title>WELCOME KOREA</Title>
+      <Title>About KOREA</Title>
+      <SubTitle>Korean daily life tutorial.</SubTitle>
       <Login />
     </Container>
   );

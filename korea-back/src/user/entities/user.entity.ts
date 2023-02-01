@@ -48,6 +48,7 @@ export class User {
 
   async checkPassword(password: string): Promise<Boolean> {
     try {
+      console.log(password);
       const ok = await bcrypt.compare(password, this.password);
       return ok;
     } catch (e) {
