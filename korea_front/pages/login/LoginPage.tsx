@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import GoogleLogin from "react-google-login";
 import Link from "next/link";
-import LoginInput from "./LoginInput";
-import SignUpInput from "./SignUpInput";
+import LoginInput from "../../layout/LoginInput";
+import SignUpInput from "../../layout/SignUpInput";
 
 const AuthGrop = styled.div`
   margin: 0px 0px 50px 0px;
@@ -103,6 +103,7 @@ const TitleContainer = styled.div`
 
 const AllContainer = styled.div`
   background-color: black;
+  height: 100vh;
 `;
 
 const InputContainer = styled.div`
@@ -112,6 +113,8 @@ const InputContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   width: 90%;
+  height: 69vh;
+
   margin: 0px 0px 0px 100px;
   @media ${(props) => props.theme.laptop} {
     font-size: 30px;
@@ -130,6 +133,7 @@ const InputContainer = styled.div`
     border-radius: 60px 60px 0px 0px;
     width: 100%;
     margin: 0px 0px 0px 0px;
+    height: 73vh;
   }
 `;
 

@@ -4,6 +4,7 @@ const GlobalStyle = createGlobalStyle`
     ${reset}
   *, *::before, *::after {
     box-sizing: border-box;
+
   }
   input {
     outline:"none";
@@ -11,7 +12,11 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: "Helvetica", "Arial", sans-serif;
-    line-height: 3;
+    line-height: 2;
+
+  }
+  *{
+    
   }
 `;
 

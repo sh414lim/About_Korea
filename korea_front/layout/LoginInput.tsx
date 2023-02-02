@@ -35,7 +35,7 @@ const SignInput = styled.input`
   height: 60px;
   margin: 10px;
   border-radius: 10px;
-  border: 1px solid gray;
+  border: 3px solid black;
   @media ${(props) => props.theme.mobile} {
     font-size: 15px;
     width: 180px;
@@ -88,7 +88,7 @@ const SignUpButton = styled.button`
   }
 `;
 
-export default function LoginInput({ setInputMode }) {
+export default function LoginInput({ setInputMode }: any) {
   const [Uemail, setUemail] = useState("");
   const [Upassword, setpassword] = useState("");
   const [token, setToken] = useState("");
@@ -97,7 +97,7 @@ export default function LoginInput({ setInputMode }) {
 
   const handleSignUp = () => {
     RequestloginApi(Uemail, Upassword)
-      .then((res) => {
+      .then((res: any) => {
         console.log(res);
         setToken(res.token);
         router.push("/main/introduce");

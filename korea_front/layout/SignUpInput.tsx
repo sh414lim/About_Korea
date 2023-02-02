@@ -91,7 +91,7 @@ const SignUpButton = styled.button`
   }
 `;
 
-export default function SignUpInput({ setInputMode }) {
+export default function SignUpInput({ setInputMode }: any) {
   const [Uemail, setUemail] = useState("");
   const [Upassword, setpassword] = useState("");
   const [Ucountry, setUcountry] = useState("");
