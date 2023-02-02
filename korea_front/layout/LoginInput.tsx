@@ -47,11 +47,17 @@ const LoginButton = styled.button`
   /* width: 80%; */
   margin: 20px 0px 0px 00px;
   height: 50px;
-  background-color: #417df5;
+  background-color: black;
   border: none;
   color: white;
   font-size: 20px;
   border-radius: 10px;
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 5.95px 5.95px 4.6px;
+    background-color: gray;
+    transition: 0.5s;
+    /* transform: 0.5s; */
+  }
 
   @media ${(props) => props.theme.mobile} {
     width: 90%;
@@ -63,13 +69,15 @@ const LoginButton = styled.button`
 const SignUpButton = styled.button`
   margin: 20px 0px 0px 00px;
   height: 50px;
-  background-color: #6bc7a1;
+  background-color: black;
   border: none;
   color: white;
   font-size: 20px;
   border-radius: 10px;
   &:hover {
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    box-shadow: rgba(0, 0, 0, 0.15) 5.95px 5.95px 4.6px;
+    background-color: gray;
+    transition: 0.5s;
     /* transform: 0.5s; */
   }
   @media ${(props) => props.theme.mobile} {
