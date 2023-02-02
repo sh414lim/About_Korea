@@ -9,7 +9,9 @@ const Container = styled.div`
 
 const CategoryBox = styled.div`
   height: 80vh;
-  background-color: red;
+  background-color: black;
+  display: flex;
+  justify-content: center;
 `;
 
 const TitleContainer = styled.div`
