@@ -3,10 +3,22 @@ import styled from "styled-components";
 import Login from "../layout/Login";
 
 const Container = styled.div`
+  top: 0;
   /* background-color: red; */
-  margin: 50px 0px 0px 0px;
+  /* margin: 50px 0px 0px 0px; */
+
+  @media ${(props) => props.theme.mobile} {
+    background-image: url("https://images.unsplash.com/photo-1599033769063-fcd3ef816810?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8a29yZWF8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
+    height: 800px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+  }
 `;
+const ImgCotanier = styled.div``;
+
 const Title = styled.h1`
+  top: 0;
   font-size: 100px;
   display: flex;
   color: black;
@@ -57,16 +69,6 @@ export default function Intro() {
       <Title>About KOREA</Title>
       <SubTitle>Korean daily life tutorial.</SubTitle>
       <Login />
-      <VideoContainer>
-        {/* <VideoPlayer
-          className="video"
-          src={
-            "https://player.vimeo.com/external/435674703.sd.mp4?s=01ad1ba21dc72c1d34728e1b77983805b34daad7&profile_id=165&oauth2_token_id=57447761"
-          }
-          autoPlay={true}
-          muted={true}
-        /> */}
-      </VideoContainer>
     </Container>
   );
 }
