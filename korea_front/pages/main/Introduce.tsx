@@ -4,12 +4,12 @@ import Category from "../../layout/main/Category";
 
 const Container = styled.div`
   height: 100vh;
-  background-color: black;
+  /* background-color: black; */
 `;
 
 const CategoryBox = styled.div`
   height: 80vh;
-  background-color: black;
+  /* background-color: black; */
   display: flex;
   justify-content: center;
 `;
