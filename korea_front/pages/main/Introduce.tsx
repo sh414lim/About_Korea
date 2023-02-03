@@ -28,7 +28,8 @@ export default function Introduce() {
 
   return (
     <Container>
-      {layoutOn ? <TitleContainer>123</TitleContainer> : ""}
+      <TitleContainer>123</TitleContainer>
+      {/* {layoutOn ? <TitleContainer>123</TitleContainer> : ""} */}
       <CategoryBox>
         <Category />
       </CategoryBox>

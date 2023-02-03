@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { ImgObject } from "../../components/img";
-import { motion } from "framer-motion";
-import { animated, useSpring } from "react-spring";
-import { useRouter } from "next/router";
+import Link from "next/link";
+import { useSpring, animated } from "react-spring";
+import { AnimatedContainer } from "../../components/AnimatedRouterEvent";
 
 const Container = styled.div`
   color: white;
@@ -58,31 +58,40 @@ const BackImg = styled.img`
 `;
 
 export default function Category() {
-  const router = useRouter();
-  const [routerInfo, setRouterInfo] = useState({
-    prevPathname: router.pathname,
-    animated: "enter",
+  const animationProps = useSpring({
+    opacity: 1,
+    // transform: "translate3d(0,0,0)",
+    from: {
+      opacity: 0,
+      transition: "all 1.9s",
+      // transform: "translate3d(100%,0,0)",
+    },
+    config: { mass: 5, tension: 500, friction: 80 },
   });
-
   return (
-    <Container>
-      <CateGroup>
-        <CateBox>
-          <BackImg src={ImgObject.subway} />
-        </CateBox>
-        <CateBox>
-          <BackImg src={ImgObject.trip} />
-        </CateBox>
-        <CateBox>
-          <BackImg src={ImgObject.card} />
-        </CateBox>
-        <CateBox>
-          <BackImg src={ImgObject.phone} />
-        </CateBox>
-        <CateBox>
-          <BackImg src={ImgObject.house} />
-        </CateBox>
-      </CateGroup>
-    </Container>
+    <AnimatedContainer style={animationProps}>
+      <Container>
+        <CateGroup>
+          <Link href="/detail/InfoPage">
+            <CateBox>
+              <BackImg src={ImgObject.subway} />
+            </CateBox>
+          </Link>
+
+          <CateBox>
+            <BackImg src={ImgObject.trip} />
+          </CateBox>
+          <CateBox>
+            <BackImg src={ImgObject.card} />
+          </CateBox>
+          <CateBox>
+            <BackImg src={ImgObject.phone} />
+          </CateBox>
+          <CateBox>
+            <BackImg src={ImgObject.house} />
+          </CateBox>
+        </CateGroup>
+      </Container>
+    </AnimatedContainer>
   );
 }
