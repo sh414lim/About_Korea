@@ -10,8 +10,8 @@ const CateBox = styled.div`
   /* border: 1px solid black; */
   display: flex;
   flex-direction: "column";
-  width: 20vw;
-  height: 35vw;
+  width: 20.5vw;
+  height: 39.3vw;
   /* padding: 1rem; */
   transition: 0.5s;
   box-sizing: "border-box";
@@ -33,9 +33,17 @@ const CateGroup = styled.div`
   height: 100%;
   margin: auto;
   box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  border-radius: 10px;
 `;
 const BackImg = styled.img`
   width: 100%;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+    transition: 0.5s;
+  }
 `;
 
 export default function Category() {
