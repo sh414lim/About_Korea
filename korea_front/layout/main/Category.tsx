@@ -64,7 +64,7 @@ export default function Category() {
     from: {
       opacity: 0,
       transition: "all 1.9s",
-      // transform: "translate3d(100%,0,0)",
+      // transform: "translate3d(100%,0₩,0)",
     },
     config: { mass: 5, tension: 500, friction: 80 },
   });
@@ -72,15 +72,21 @@ export default function Category() {
     <AnimatedContainer style={animationProps}>
       <Container>
         <CateGroup>
-          <Link href="/detail/InfoPage">
+          <Link
+            href={{ pathname: "/detail/InfoPage", query: { cate: "subway" } }}
+          >
             <CateBox>
               <BackImg src={ImgObject.subway} />
             </CateBox>
           </Link>
 
-          <CateBox>
-            <BackImg src={ImgObject.trip} />
-          </CateBox>
+          <Link
+            href={{ pathname: "/detail/InfoPage", query: { cate: "trip" } }}
+          >
+            <CateBox>
+              <BackImg src={ImgObject.trip} />
+            </CateBox>
+          </Link>
           <CateBox>
             <BackImg src={ImgObject.card} />
           </CateBox>
