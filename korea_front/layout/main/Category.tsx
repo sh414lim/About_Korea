@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { ImgObject } from "../../components/img";
+import { motion } from "framer-motion";
 
 const Container = styled.div`
   color: white;
@@ -14,6 +16,7 @@ const CateBox = styled.div`
   height: 39.3vw;
   /* padding: 1rem; */
   transition: 0.5s;
+
   box-sizing: "border-box";
   &:hover {
     max-width: 80vw;
@@ -22,6 +25,10 @@ const CateBox = styled.div`
     width: 40vw;
     /* padding: 0px 0px 0px 10px; */
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    /* display: block;
+        width: 100vw;
+        height: 100%;
+        transition: width 0.4s, height 0.8s; */
   }
 `;
 const CateGroup = styled.div`
@@ -40,6 +47,8 @@ const CateGroup = styled.div`
 const BackImg = styled.img`
   width: 100%;
   opacity: 0.8;
+  object-fit: cover;
+
   &:hover {
     opacity: 1;
     transition: 0.5s;
@@ -48,24 +57,35 @@ const BackImg = styled.img`
 
 export default function Category() {
   return (
-    <Container>
-      <CateGroup>
-        <CateBox>
-          <BackImg src="https://images.unsplash.com/photo-1529179307417-ca83d48bd790?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" />
-        </CateBox>
-        <CateBox>
-          <BackImg src="https://plus.unsplash.com/premium_photo-1661962699053-3f216d2f4c48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fCVFRCU5NSU5QyVFQSVCNSVBRCUyMCVFQyU5NyVBQyVFRCU5NiU4OXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" />
-        </CateBox>
-        <CateBox>
-          <BackImg src="https://images.unsplash.com/photo-1556742212-5b321f3c261b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzV8fCVFQyU4QiVBMCVFQyU5QSVBOSUyMCVFQyVCOSVCNCVFQiU5MyU5Q3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" />
-        </CateBox>
-        <CateBox>
-          <BackImg src="https://images.unsplash.com/photo-1523206489230-c012c64b2b48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8JUVEJTk1JUI4JUVCJTkzJTlDJUVEJThGJUIwfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" />
-        </CateBox>
-        <CateBox>
-          <BackImg src="https://images.unsplash.com/photo-1460317442991-0ec209397118?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8JUVDJTk1JTg0JUVEJThDJThDJUVEJThBJUI4fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" />
-        </CateBox>
-      </CateGroup>
-    </Container>
+    <motion.div
+      initial={{ x: 300, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: 300, opacity: 0 }}
+      transition={{
+        type: "spring",
+        stiffness: 260,
+        damping: 20,
+      }}
+    >
+      <Container>
+        <CateGroup>
+          <CateBox>
+            <BackImg src={ImgObject.subway} />
+          </CateBox>
+          <CateBox>
+            <BackImg src={ImgObject.trip} />
+          </CateBox>
+          <CateBox>
+            <BackImg src={ImgObject.card} />
+          </CateBox>
+          <CateBox>
+            <BackImg src={ImgObject.phone} />
+          </CateBox>
+          <CateBox>
+            <BackImg src={ImgObject.house} />
+          </CateBox>
+        </CateGroup>
+      </Container>
+    </motion.div>
   );
 }

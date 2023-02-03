@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Category from "../../layout/main/Category";
 
@@ -22,12 +22,27 @@ const TitleContainer = styled.div`
 `;
 
 export default function Introduce() {
+  const [layoutOn, setLayoutOn] = useState(false);
+
+  useEffect(() => {}, []);
+
   return (
     <Container>
-      <TitleContainer>123</TitleContainer>
+      {layoutOn ? <TitleContainer>123</TitleContainer> : ""}
       <CategoryBox>
         <Category />
       </CategoryBox>
+      <button
+        onClick={() => {
+          if (layoutOn) {
+            setLayoutOn(false);
+          } else {
+            setLayoutOn(true);
+          }
+        }}
+      >
+        test
+      </button>
     </Container>
   );
 }
