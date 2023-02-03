@@ -6,14 +6,14 @@ import { ImgObject } from "../../components/img";
 
 const AnimatedContainer = animated(styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   height: 100vh;
   width: 100%;
   position: relative;
+  /* background-repeat: no-repeat; */
+  background-size: auto;
   background-image: url(${(props) => ImgObject[props.cate]});
-  background-size: cover;
   object-fit: cover;
   &:before {
     content: "";
@@ -26,6 +26,22 @@ const AnimatedContainer = animated(styled.div`
     background-color: #000;
   }
 `);
+const ListContainer = styled.div`
+  position: relative;
+`;
+
+const CateList = styled.ul``;
+
+const CateItem = styled.li`
+  color: white;
+  padding: 50px 150px 0px 150px;
+  font-size: 40px;
+  font-weight: 100;
+  margin-right: 80rem;
+  height: 25vh;
+  width: 25vw;
+`;
+
 const Title = styled.h1`
   color: #fff;
   text-align: center;
@@ -52,6 +68,15 @@ export default function InfoPage() {
 
   return (
     <AnimatedContainer cate={router.query.cate} style={animationProps}>
+      <ListContainer>
+        <CateList>
+          <CateItem>123</CateItem>
+          <CateItem>123</CateItem>
+          <CateItem>123</CateItem>
+          <CateItem>123</CateItem>
+        </CateList>
+      </ListContainer>
+
       <Title>Welcome to {router.pathname}</Title>
     </AnimatedContainer>
   );
