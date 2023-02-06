@@ -4,7 +4,7 @@ import GoogleLogin from "react-google-login";
 import Link from "next/link";
 import LoginInput from "../../layout/LoginInput";
 import SignUpInput from "../../layout/SignUpInput";
-
+import { useSpring, animated } from "react-spring";
 const AuthGrop = styled.div`
   margin: 0px 0px 50px 0px;
 `;
@@ -55,90 +55,63 @@ const Title = styled.h5`
   justify-content: center;
   align-items: center;
   align-content: center;
-
-  @media ${(props) => props.theme.laptop} {
-    font-size: 80px;
-    color: white;
-  }
-
-  @media ${(props) => props.theme.tablet} {
-    font-size: 50px;
-    color: white;
-  }
-
-  @media ${(props) => props.theme.mobile} {
-    font-size: 35px;
-    color: white;
-  }
-`;
-
-const SubTitle = styled.span`
-  font-size: 40px;
-  display: flex;
-  color: white;
-  top: 0;
-  justify-content: center;
-  align-items: flex-start;
-  align-content: flex-start;
-  @media ${(props) => props.theme.laptop} {
-    font-size: 30px;
-  }
-
-  @media ${(props) => props.theme.tablet} {
-    font-size: 20px;
-  }
-
-  @media ${(props) => props.theme.mobile} {
-    color: white;
-    font-size: 20px;
+  &:hover {
+    color: gray;
+    transition: 0.3s;
   }
 `;
 
 const TitleContainer = styled.div`
-  /* margin: 60px 0px 0px 0px; */
-
   padding: 40px 0px 20px 0px;
   top: 0;
 `;
 
-const AllContainer = styled.div`
-  background-color: black;
-  height: 100vh;
-`;
-
-const InputContainer = styled.div`
+const InputContainer = animated(styled.div`
   background-color: white;
-  border-radius: 90px 90px 0px 0px;
+  border-radius: 90px;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 90%;
-  height: 69vh;
+  width: 40vw;
+  height: 70vh;
+`);
 
-  margin: 0px 0px 0px 100px;
-  @media ${(props) => props.theme.laptop} {
-    font-size: 30px;
-    border-radius: 90px 90px 0px 0px;
-  }
-
-  @media ${(props) => props.theme.tablet} {
-    font-size: 20px;
-    border-radius: 90px 90px 0px 0px;
-    width: 100%;
-  }
-
-  @media ${(props) => props.theme.mobile} {
-    color: white;
-    font-size: 20px;
-    border-radius: 60px 60px 0px 0px;
-    width: 100%;
-    margin: 0px 0px 0px 0px;
-    height: 73vh;
-  }
+const AllContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
 `;
+
+// const InputContainer = styled.div`
+//   background-color: white;
+//   border-radius: 90px;
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+//   width: 40vw;
+//   height: 70vh;
+// `;
 
 export default function Login() {
   const [inputMode, setInputMODE] = useState(true);
+  const animationProps = useSpring({
+    width: "40vw",
+    height: "70vh",
+
+    from: {
+      //   backgroundSize: "500px",
+
+      width: "0vw",
+      height: "70vh",
+      transition: "all 0.1s",
+    },
+    // config: { mass: 5, tension: 500, friction: 80 },
+  });
 
   const authKey = {
     googleKey: process.env.GOOGLE_LOGIN_CLIENT_ID,
@@ -146,17 +119,18 @@ export default function Login() {
   return (
     <AllContainer>
       <TitleContainer>
-        <Title>About KOREA</Title>
-        <SubTitle>Korean daily life tutorial.</SubTitle>
+        <Title>
+          <Link href="/">About KOREA</Link>
+        </Title>
       </TitleContainer>
 
-      <InputContainer>
+      <InputContainer style={animationProps}>
         {inputMode ? (
           <LoginInput setInputMode={setInputMODE} />
         ) : (
           <SignUpInput setInputMode={setInputMODE} />
         )}
-        <AuthGrop>
+        {/* <AuthGrop>
           <AuthButton
             onClick={() => {
               console.log("google");
@@ -174,7 +148,7 @@ export default function Login() {
               alt="카카오 로그인 버튼"
             />
           </AuthButton>
-        </AuthGrop>
+        </AuthGrop> */}
       </InputContainer>
     </AllContainer>
   );

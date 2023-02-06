@@ -43,8 +43,8 @@ const SubImg = styled.img`
 
 export default function SubwayMap() {
   const [position, setPosition] = useState({
-    lat: 33.5563,
-    lng: 126.79581,
+    lat: 37.55262330412975,
+    lng: 126.9728733697602,
   });
   const [weatherInfo, setWeatherInfo] = useState();
 
@@ -60,6 +60,7 @@ export default function SubwayMap() {
       .catch((err) => {
         console.log(err);
       });
+    console.log(position);
   }, [position]);
 
   return (

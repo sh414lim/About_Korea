@@ -4,6 +4,7 @@ import GoogleLogin from "react-google-login";
 import Link from "next/link";
 import { RequestloginApi } from "../pages/api/auth/api";
 import { useRouter } from "next/router";
+import { useSpring, animated } from "react-spring";
 
 const Box = styled.div`
   display: flex;
@@ -93,6 +94,19 @@ export default function LoginInput({ setInputMode }: any) {
   const [Upassword, setpassword] = useState("");
   const [token, setToken] = useState("");
 
+  const animationProps = useSpring({
+    width: "80vw",
+
+    from: {
+      //   backgroundSize: "500px",
+
+      width: "0vw",
+      height: "70vh",
+      transition: "all 0.1s",
+    },
+    // config: { mass: 5, tension: 500, friction: 80 },
+  });
+
   const router = useRouter();
 
   const handleSignUp = () => {
@@ -129,13 +143,9 @@ export default function LoginInput({ setInputMode }: any) {
             />
           </InputItem>
           <LoginButton onClick={handleSignUp}>Sign In</LoginButton>
-          <SignUpButton
-            onClick={() => {
-              setInputMode(false);
-            }}
-          >
-            Do you want to sign up?
-          </SignUpButton>
+          <Link href="/login/SignUp">
+            <SignUpButton>Do you want to sign up?</SignUpButton>
+          </Link>
         </InputGroup>
       </Box>
     </>
