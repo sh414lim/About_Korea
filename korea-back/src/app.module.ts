@@ -9,6 +9,7 @@ import { join } from 'path';
 import { User } from './user/entities/user.entity';
 import { JwtModule } from './jwt/jwt.module';
 import { ConfigModule } from '@nestjs/config';
+import { SubwayModule } from './subway/subway.module';
 import * as Joi from 'joi';
 
 @Module({
@@ -49,6 +50,7 @@ import * as Joi from 'joi';
     JwtModule.forRoot({
       privateKey: process.env.PRIVATE_KEY,
     }),
+    SubwayModule,
   ],
   controllers: [AppController],
   providers: [AppService],
