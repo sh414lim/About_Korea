@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import MainLayout from "../../layout/main/MainLayout";
+import MainBanner from "./MainBanner";
+import MainIntrouduce from "./MainIntrouduce";
+import MainNavigator from "./MainNavigator";
 
 const Container = styled.div`
   margin: 0 auto;
@@ -36,24 +39,9 @@ export default function MainPage() {
   return (
     <MainLayout>
       <Container>
-        {/* 컴포넌트 분리 예정 */}
-        <BannerList></BannerList>
-
-        <MainContainer className="flex">
-          {/* 컴포넌트 분리 예정 */}
-          <MainContent>
-            <DumeContent>더미 컨텐츠</DumeContent>
-          </MainContent>
-
-          {/* 컴포넌트 분리예정 */}
-        </MainContainer>
-
-        <MainContainer>
-          {/* 컴포넌트 분리예정 */}
-          <MainContent>
-            <DumeContent>더미 컨텐츠</DumeContent>
-          </MainContent>
-        </MainContainer>
+        <MainBanner />
+        <MainNavigator />
+        <MainIntrouduce />
       </Container>
     </MainLayout>
   );
