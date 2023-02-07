@@ -20,7 +20,10 @@ export const PostSignUpApi = (
         if (isSuccess) {
           resolve(res.data);
         } else {
-          Swal.fire(res.data.error);
+          Swal.fire({
+            icon: "error",
+            text: `${res.data.error}`,
+          });
         }
         reject(res.data);
       })
@@ -43,6 +46,11 @@ export const RequestloginApi = (Uemail: string, Upassword: string) => {
         let isSuccess: boolean = res.data.ok;
         if (isSuccess) {
           resolve(res.data);
+        } else {
+          Swal.fire({
+            icon: "error",
+            text: `${res.data.error}`,
+          });
         }
         reject(res.data.ok);
       })

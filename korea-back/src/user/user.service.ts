@@ -57,7 +57,7 @@ export class UserService {
       if (!user) {
         return {
           ok: false,
-          error: '회원 정보를 찾을 수 없습니다',
+          error: 'Member information not found',
         };
       }
       console.log(password);
@@ -66,7 +66,7 @@ export class UserService {
       if (!passwordCheck) {
         return {
           ok: false,
-          error: '비밀번호가 맞지 않습니다 다시 확인 부탁드립니다',
+          error: "The password doesn't match. Please check it again",
         };
       }
       const token = this.jwtService.sign(user.id);

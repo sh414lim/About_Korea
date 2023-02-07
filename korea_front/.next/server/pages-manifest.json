@@ -3,5 +3,8 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/login/LoginPage": "pages/login/LoginPage.js",
-  "/login/SignUpPage": "pages/login/SignUpPage.js"
+  "/login/SignUpPage": "pages/login/SignUpPage.js",
+  "/detail/InfoPage": "pages/detail/InfoPage.js",
+  "/": "pages/index.js",
+  "/detail/SubwayDetail": "pages/detail/SubwayDetail.js"
 }

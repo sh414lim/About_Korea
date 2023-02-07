@@ -5,6 +5,7 @@ import Link from "next/link";
 import { RequestloginApi } from "../pages/api/auth/api";
 import { useRouter } from "next/router";
 import { useSpring, animated } from "react-spring";
+import Swal from "sweetalert2";
 
 const Box = styled.div`
   display: flex;
@@ -98,7 +99,19 @@ export default function LoginInput({ setInputMode }: any) {
       .then((res: any) => {
         console.log(res);
         setToken(res.token);
-        router.push("/main/introduce");
+        localStorage.setItem("token", token);
+        // if (res.ok) {
+        //   Swal.fire({
+        //     icon: "success",
+        //     title: "Login",
+        //     text: "Success Login",
+        //     confirmButtonText: "Login",
+        //   }).then((res) => {
+        //     if (res.isConfirmed) {
+        //       router.push("/");
+        //     }
+        //   });
+        // }
       })
       .catch((err) => {
         console.log(err, 77);

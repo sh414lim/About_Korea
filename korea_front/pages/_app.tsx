@@ -7,7 +7,9 @@ import Script from "next/script";
 import GlobalStyle from "../styles/GlobalStyle";
 import { AnimatePresence } from "framer-motion";
 import Header from "../layout/Header";
-
+import cookies from "next-cookies";
+import { Context } from "vm";
+import { useEffect } from "react";
 declare global {
   // Kakao 함수를 전역에서 사용할 수 있도록 선언
   interface Window {
@@ -21,6 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
     window.Kakao.init(process.env.KAKAO_LOGIN_PRIVATE_JS_KEY);
     console.log(window.Kakao.isInitialized());
   }
+  useEffect(() => {}, []);
   return (
     <>
       <ThemeProvider theme={theme}>
