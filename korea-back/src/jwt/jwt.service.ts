@@ -15,6 +15,11 @@ export class JwtService {
     return jwt.sign({ id: userId }, this.configService.get('PRIVATE_KEY'));
   }
 
+  allProjectSign(payload: object): string {
+    // other project use
+    return jwt.sign(payload, this.configService.get('PRIVATE_KEY'));
+  }
+
   //암호 해동
   verify(token: string) {
     return jwt.verify(token, this.options.privateKey);

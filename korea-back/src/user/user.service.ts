@@ -8,12 +8,15 @@ import {
 } from './dtos/create-user.dto';
 import { LoginInput, LoginOutPut } from './dtos/login.dto';
 import { User } from './entities/user.entity';
+import { Verification } from './entities/verification.entity';
 
 @Injectable()
 export class UserService {
   constructor(
     @InjectRepository(User)
     private readonly user: Repository<User>,
+    @InjectRepository(Verification)
+    private readonly verifications: Repository<Verification>,
     private readonly jwtService: JwtService,
   ) {}
 
@@ -33,8 +36,13 @@ export class UserService {
         };
       }
 
-      const users = await this.user.save(
+      const user = await this.user.save(
         this.user.create({ email, password, country }),
+      );
+      await this.verifications.save(
+        this.verifications.create({
+          user,
+        }),
       );
 
       return {
@@ -52,7 +60,7 @@ export class UserService {
     try {
       const user = await this.user.findOne({
         where: { email },
-        select: ['id', 'password'],
+        select: ['id', 'password', 'verified'],
       });
       if (!user) {
         return {
@@ -69,7 +77,16 @@ export class UserService {
           error: "The password doesn't match. Please check it again",
         };
       }
-      const token = this.jwtService.sign(user.id);
+      const token = this.jwtService.allProjectSign({
+        id: user.id,
+        verified: user.verified,
+      });
+      const refreshToken = this.jwtService.allProjectSign({
+        email: user.email,
+        secret: process.env.PRIVATE_KEY,
+        expiresIn: '30m',
+      });
+      console.log(refreshToken);
       return {
         ok: true,
         token,

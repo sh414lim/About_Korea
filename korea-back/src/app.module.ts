@@ -10,6 +10,8 @@ import { User } from './user/entities/user.entity';
 import { JwtModule } from './jwt/jwt.module';
 import { ConfigModule } from '@nestjs/config';
 import { SubwayModule } from './subway/subway.module';
+import { AuthModule } from './auth/auth.module';
+import { EmailModule } from './email/email.module';
 import * as Joi from 'joi';
 
 @Module({
@@ -51,6 +53,7 @@ import * as Joi from 'joi';
       privateKey: process.env.PRIVATE_KEY,
     }),
     SubwayModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

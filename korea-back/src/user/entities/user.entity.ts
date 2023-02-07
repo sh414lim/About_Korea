@@ -8,11 +8,13 @@ import {
 } from 'typeorm';
 import * as bcrypt from 'bcrypt';
 import { InternalServerErrorException } from '@nestjs/common';
+import { Exclude } from 'class-transformer';
+import { CoreEntity } from 'src/common/entities/core.entity';
 
 @InputType('UserInputType', { isAbstract: true }) // Inputtype 이 스키마에 포함되지 않길 원한다
 @ObjectType()
 @Entity()
-export class User {
+export class User extends CoreEntity {
   @PrimaryGeneratedColumn()
   @Field((type) => Number)
   id: number;
@@ -32,6 +34,10 @@ export class User {
   @Column({ nullable: true, default: false })
   @Field((type) => Boolean)
   verified: boolean;
+
+  @Column({ nullable: true })
+  @Exclude()
+  currentHashedRefreshToken?: string;
 
   @BeforeInsert() // db에 저장된 로직
   @BeforeUpdate()
