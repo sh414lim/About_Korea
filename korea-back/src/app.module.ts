@@ -11,8 +11,9 @@ import { JwtModule } from './jwt/jwt.module';
 import { ConfigModule } from '@nestjs/config';
 import { SubwayModule } from './subway/subway.module';
 import { AuthModule } from './auth/auth.module';
-import { EmailModule } from './email/email.module';
+import { MailModule } from './mail/mail.module';
 import * as Joi from 'joi';
+import { Verification } from './mail/entities/verification.entity';
 
 @Module({
   imports: [
@@ -37,6 +38,7 @@ import * as Joi from 'joi';
     GraphQLModule.forRoot({
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       driver: ApolloDriver,
+      context: ({ req }) => ({ user: req['user'] }),
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
@@ -47,13 +49,14 @@ import * as Joi from 'joi';
       database: 'about-korea',
       synchronize: true, // 현재상태로 마이그레이션
       logging: true,
-      entities: [User],
+      entities: [User, Verification],
     }),
     JwtModule.forRoot({
       privateKey: process.env.PRIVATE_KEY,
     }),
     SubwayModule,
     AuthModule,
+    MailModule,
   ],
   controllers: [AppController],
   providers: [AppService],

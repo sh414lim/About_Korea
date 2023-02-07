@@ -7,16 +7,27 @@ type CreateAccountOutput {
   ok: Boolean!
 }
 
+type VerifyEmailOutput {
+  error: String
+  ok: Boolean!
+}
+
 type Query {
   user: Boolean!
+  verification: Boolean!
 }
 
 type Mutation {
   createUser(input: CreateAccountInput!): CreateAccountOutput!
+  verifyEmail(input: VerifyEmailIutput!): VerifyEmailOutput!
 }
 
 input CreateAccountInput {
   email: String!
   password: String!
   country: String!
+}
+
+input VerifyEmailIutput {
+  code: String!
 }

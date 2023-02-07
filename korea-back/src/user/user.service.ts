@@ -1,14 +1,15 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { JwtService } from 'src/jwt/jwt.service';
+import { Verification } from 'src/mail/entities/verification.entity';
 import { Repository } from 'typeorm';
 import {
   CreateAccountInput,
   CreateAccountOutput,
 } from './dtos/create-user.dto';
 import { LoginInput, LoginOutPut } from './dtos/login.dto';
+import { VerifyEmailOutput } from './dtos/verify-email.dto';
 import { User } from './entities/user.entity';
-import { Verification } from './entities/verification.entity';
 
 @Injectable()
 export class UserService {
@@ -119,6 +120,29 @@ export class UserService {
         users,
       };
     } catch (error) {
+      return {
+        ok: false,
+        error,
+      };
+    }
+  }
+
+  async verifyEmail(code: string): Promise<VerifyEmailOutput> {
+    try {
+      const verification = await this.verifications.findOne({
+        where: { code },
+        relations: ['user'],
+      });
+      if (verification) {
+        verification.user.verified = true;
+        await this.user.save(verification.user);
+        await this.verifications.delete(verification.id);
+        return { ok: true };
+      }
+
+      throw new Error();
+    } catch (error) {
+      console.log(error);
       return {
         ok: false,
         error,
