@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import MainLayout from "../layout/main/MainLayout";
+import MainLayout from "../../layout/main/MainLayout";
 
 const Container = styled.div`
   margin: 0 auto;
