@@ -6,7 +6,7 @@ import theme from "../styles/theme";
 import Script from "next/script";
 import GlobalStyle from "../styles/GlobalStyle";
 import { AnimatePresence } from "framer-motion";
-import AnimatedRoute from "../components/AnimatedRouter";
+import Header from "../layout/Header";
 
 declare global {
   // Kakao 함수를 전역에서 사용할 수 있도록 선언
@@ -26,6 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <SessionProvider session={pageProps.session}>
+          <Header />
           <Component {...pageProps} />
           <Script
             src="https://developers.kakao.com/sdk/js/kakao.js"

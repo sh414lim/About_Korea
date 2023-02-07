@@ -3,11 +3,13 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
+  z-index: 10;
+  position: absolute;
   display: grid;
   grid-template-columns: 57vw 43vw;
   width: 100vw;
-  height: 7vh;
-  background-color: black;
+  height: 10vh;
+  padding: 0px 0px 0px 0px;
   color: white;
 `;
 
@@ -17,11 +19,19 @@ const MypageContainer = styled.div`
   margin: 0px 30px 0px 0px;
 `;
 
+const Title = styled.h5`
+  top: 0;
+  /* position: absolute; */
+  /* padding: 0px */
+  &:hover {
+    color: gray;
+    transition: 0.3s;
+  }
+`;
+
 const LogoContainer = styled.div`
   display: flex;
-  /* width: 50%; */
   font-size: 40px;
-  margin: 100px 0px 0px 0px;
   justify-content: end;
   align-content: center;
   align-items: center;
@@ -43,13 +53,19 @@ const MypageList = styled.li`
 export default function Header() {
   return (
     <Container>
-      <LogoContainer>ABOUT KOREA</LogoContainer>
+      <LogoContainer>
+        <Link href="/">
+          <Title>About KOREA</Title>
+        </Link>
+      </LogoContainer>
       <MypageContainer>
         <MypageGroup>
           <MypageList>
             <Link href="/login/LoginPage">LOGIN</Link>
           </MypageList>
-          <MypageList>SIGNUP</MypageList>
+          <MypageList>
+            <Link href="/login/SignUpPage">SIGNUP</Link>
+          </MypageList>
           <MypageList>INFO</MypageList>
         </MypageGroup>
       </MypageContainer>

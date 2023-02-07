@@ -15,13 +15,8 @@ const Box = styled.div`
 `;
 
 const InputGroup = styled.ul`
-  padding: 40px;
   display: flex;
   flex-direction: column;
-  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
-  @media ${(props) => props.theme.mobile} {
-    padding: 50px;
-  }
 `;
 
 const InputItem = styled.li`
@@ -32,8 +27,8 @@ const InputItem = styled.li`
 
 const SignInput = styled.input`
   font-size: 20px;
-  width: 400px;
-  height: 60px;
+  width: 23vw;
+  height: 7vh;
   margin: 10px;
   border-radius: 10px;
   border: 3px solid black;
@@ -47,7 +42,8 @@ const SignInput = styled.input`
 const LoginButton = styled.button`
   /* width: 80%; */
   margin: 20px 0px 0px 00px;
-  height: 50px;
+  height: 5.5vh;
+  width: 23vw;
   background-color: black;
   border: none;
   color: white;
@@ -58,18 +54,12 @@ const LoginButton = styled.button`
     background-color: gray;
     transition: 0.5s;
     /* transform: 0.5s; */
-  }
-
-  @media ${(props) => props.theme.mobile} {
-    width: 90%;
-    height: 30px;
-    margin: 5px 0px 0px 8px;
-    font-size: 15px;
   }
 `;
 const SignUpButton = styled.button`
   margin: 20px 0px 0px 00px;
-  height: 50px;
+  height: 5.5vh;
+  width: 23vw;
   background-color: black;
   border: none;
   color: white;
@@ -80,12 +70,6 @@ const SignUpButton = styled.button`
     background-color: gray;
     transition: 0.5s;
     /* transform: 0.5s; */
-  }
-  @media ${(props) => props.theme.mobile} {
-    width: 90%;
-    height: 30px;
-    margin: 5px 0px 0px 8px;
-    font-size: 12px;
   }
 `;
 
@@ -143,7 +127,7 @@ export default function LoginInput({ setInputMode }: any) {
             />
           </InputItem>
           <LoginButton onClick={handleSignUp}>Sign In</LoginButton>
-          <Link href="/login/SignUp">
+          <Link href="/login/SignUpPage">
             <SignUpButton>Do you want to sign up?</SignUpButton>
           </Link>
         </InputGroup>

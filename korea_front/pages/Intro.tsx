@@ -6,7 +6,7 @@ import Introduce from "./main/Introduce";
 export default function Intro() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Introduce />
     </>
   );
