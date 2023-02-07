@@ -29,7 +29,7 @@ export class UserService {
         console.log('');
         return {
           ok: false,
-          error: '현재 이메일로 가입한 계정이 존재합니다',
+          error: 'An account currently subscribed by email exists',
         };
       }
 

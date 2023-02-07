@@ -1,4 +1,5 @@
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export const PostSignUpApi = (
   Uemail: string,
@@ -14,12 +15,14 @@ export const PostSignUpApi = (
     axios
       .post("http://localhost:8000/user", params)
       .then((res) => {
-        console.log(res);
+        // console.log(res.data);
         let isSuccess: boolean = res.data.ok;
         if (isSuccess) {
-          resolve(res.data.ok);
+          resolve(res.data);
+        } else {
+          Swal.fire(res.data.error);
         }
-        reject(res.data.ok);
+        reject(res.data);
       })
       .catch((error) => {
         reject(error);
@@ -36,7 +39,7 @@ export const RequestloginApi = (Uemail: string, Upassword: string) => {
     axios
       .post("http://localhost:8000/user/login", params)
       .then((res) => {
-        console.log(res);
+        console.log(res.data);
         let isSuccess: boolean = res.data.ok;
         if (isSuccess) {
           resolve(res.data);

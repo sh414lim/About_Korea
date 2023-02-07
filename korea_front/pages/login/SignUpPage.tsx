@@ -3,8 +3,10 @@ import styled from "styled-components";
 import GoogleLogin from "react-google-login";
 import Link from "next/link";
 import { PostSignUpApi } from "../api/auth/api";
-import e from "express";
+import e, { Router } from "express";
 import LoginLayout from "../../layout/login/LoginLayout";
+import Swal from "sweetalert2";
+import { useRouter } from "next/router";
 
 const Box = styled.div`
   display: flex;
@@ -84,18 +86,27 @@ export default function SignUpInput({ setInputMode }: any) {
   const [Upassword, setpassword] = useState("");
   const [Ucountry, setUcountry] = useState("");
 
+  const router = useRouter();
+
   const handleSignUp = () => {
     PostSignUpApi(Uemail, Upassword, Ucountry).then((res) => {
       console.log(res);
       if (res) {
-        alert("회원가입 성공");
-        setInputMode(true);
+        Swal.fire({
+          icon: "success",
+          title: "Sign Up",
+          text: " Membership registration completed.",
+          confirmButtonText: "Login",
+        }).then((res) => {
+          if (res.isConfirmed) {
+            router.push("/login/LoginPage");
+          }
+        });
       } else {
-        alert("회원가입 실패");
+        Swal.fire("Failed to register as a member");
       }
     });
   };
-
   return (
     <LoginLayout>
       <Box>

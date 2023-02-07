@@ -21,8 +21,6 @@ const MypageContainer = styled.div`
 
 const Title = styled.h5`
   top: 0;
-  /* position: absolute; */
-  /* padding: 0px */
   &:hover {
     color: gray;
     transition: 0.3s;
