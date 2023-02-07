@@ -2,9 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/login/LoginPage": "pages/login/LoginPage.js",
-  "/detail/InfoPage": "pages/detail/InfoPage.js",
-  "/login/SignUpPage": "pages/login/SignUpPage.js",
-  "/detail/SubwayDetail": "pages/detail/SubwayDetail.js"
+  "/publish/demo": "pages/publish/demo.js"
 }
