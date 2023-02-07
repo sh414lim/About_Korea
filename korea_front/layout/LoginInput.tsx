@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import GoogleLogin from "react-google-login";
 import Link from "next/link";
@@ -6,6 +6,7 @@ import { RequestloginApi } from "../pages/api/auth/api";
 import { useRouter } from "next/router";
 import { useSpring, animated } from "react-spring";
 import Swal from "sweetalert2";
+import Cookies from "js-cookie";
 
 const Box = styled.div`
   display: flex;
@@ -99,24 +100,33 @@ export default function LoginInput({ setInputMode }: any) {
       .then((res: any) => {
         console.log(res);
         setToken(res.token);
-        localStorage.setItem("token", token);
-        // if (res.ok) {
-        //   Swal.fire({
-        //     icon: "success",
-        //     title: "Login",
-        //     text: "Success Login",
-        //     confirmButtonText: "Login",
-        //   }).then((res) => {
-        //     if (res.isConfirmed) {
-        //       router.push("/");
-        //     }
-        //   });
-        // }
+        //로그인 방식 스토리지 vs cookie 방식 분석 필요
+        // localStorage.setItem("token", token);
+        //RECOIL 방식 사용 예쩡
+
+        if (res.ok) {
+          Swal.fire({
+            icon: "success",
+            title: "Login",
+            text: "Success Login",
+            confirmButtonText: "Login",
+          }).then((res) => {
+            if (res.isConfirmed) {
+              Cookies.set("token", token, { expires: 7 });
+              router.push("/");
+            }
+          });
+        }
       })
       .catch((err) => {
         console.log(err, 77);
       });
   };
+
+  useEffect(() => {
+    const cookie = Cookies.get("token");
+    console.log(cookie);
+  }, [token]);
   return (
     <>
       <Box>

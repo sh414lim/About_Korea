@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 import React from "react";
 import styled from "styled-components";
 import MainLayout from "../../layout/main/MainLayout";
@@ -10,6 +11,7 @@ const Container = styled.div`
 `;
 
 export default function MainPage() {
+  console.log(Cookies.get("token"));
   return (
     <MainLayout>
       <Container>

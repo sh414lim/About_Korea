@@ -9,6 +9,7 @@ import { AnimatePresence } from "framer-motion";
 import cookies from "next-cookies";
 import { Context } from "vm";
 import { useEffect } from "react";
+import { RecoilRoot } from "recoil";
 declare global {
   // Kakao 함수를 전역에서 사용할 수 있도록 선언
   interface Window {
@@ -28,7 +29,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <SessionProvider session={pageProps.session}>
-          <Component {...pageProps} />
+          <RecoilRoot>
+            <Component {...pageProps} />
+          </RecoilRoot>
           <Script
             src="https://developers.kakao.com/sdk/js/kakao.js"
             onLoad={kakaoInit}

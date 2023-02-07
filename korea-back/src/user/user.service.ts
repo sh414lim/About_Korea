@@ -82,12 +82,14 @@ export class UserService {
         id: user.id,
         verified: user.verified,
       });
+      //Refresh Token db 저장 및 검증 로직 구현 예정
       const refreshToken = this.jwtService.allProjectSign({
         email: user.email,
         secret: process.env.PRIVATE_KEY,
         expiresIn: '30m',
       });
       console.log(refreshToken);
+
       return {
         ok: true,
         token,
