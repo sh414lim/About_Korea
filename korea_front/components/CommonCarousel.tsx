@@ -4,9 +4,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import styled from "styled-components";
-import { ImgObject } from "./img";
 import Link from "next/link";
 import { useSpring, animated } from "react-spring";
+import { ImgObject } from "../common/img";
 
 const CateImg = styled.img`
   object-fit: cover;

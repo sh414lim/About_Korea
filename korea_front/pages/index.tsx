@@ -8,13 +8,6 @@ import MainPage from "../components/main/MainPage";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const [todos, setTodos] = useState([]);
-  const [ema, setEmail] = useState("");
-  const [pwd, setPwd] = useState("");
-  const [cy, setCy] = useState("");
-  const [loginEma, setLoginEma] = useState("");
-  const [loginPwd, setLoginPwd] = useState("");
-
   return (
     <>
       <MainPage />

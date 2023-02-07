@@ -36,16 +36,23 @@ export default function MainPage() {
   return (
     <MainLayout>
       <Container>
+        {/* 컴포넌트 분리 예정 */}
         <BannerList></BannerList>
+
         <MainContainer className="flex">
+          {/* 컴포넌트 분리 예정 */}
           <MainContent className="half">
             <DumeContent>더미 컨텐츠</DumeContent>
           </MainContent>
+
+          {/* 컴포넌트 분리예정 */}
           <MainContent className="half">
             <DumeContent>더미 컨텐츠</DumeContent>
           </MainContent>
         </MainContainer>
+
         <MainContainer>
+          {/* 컴포넌트 분리예정 */}
           <MainContent>
             <DumeContent>더미 컨텐츠</DumeContent>
           </MainContent>

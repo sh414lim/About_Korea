@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { ImgObject } from "../../components/img";
 import Link from "next/link";
 import { useSpring, animated } from "react-spring";
-import { AnimatedContainer } from "../../components/AnimatedRouterEvent";
+import { AnimatedContainer } from "../../common/AnimatedRouterEvent";
+import { ImgObject } from "../../common/img";
 
 const Container = styled.div`
   color: white;

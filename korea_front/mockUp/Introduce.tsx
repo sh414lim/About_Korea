@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Category from "../../layout/main/Category";
+import Category from "../components/main/Category";
 
 const Container = styled.div`
   height: 100vh;
