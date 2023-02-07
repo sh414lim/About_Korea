@@ -41,14 +41,11 @@ export default function MainPage() {
 
         <MainContainer className="flex">
           {/* 컴포넌트 분리 예정 */}
-          <MainContent className="half">
+          <MainContent>
             <DumeContent>더미 컨텐츠</DumeContent>
           </MainContent>
 
           {/* 컴포넌트 분리예정 */}
-          <MainContent className="half">
-            <DumeContent>더미 컨텐츠</DumeContent>
-          </MainContent>
         </MainContainer>
 
         <MainContainer>
