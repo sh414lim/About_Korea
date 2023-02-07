@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import MainLayout from "../layout/main/MainLayout";
 
 const Container = styled.div`
   margin: 0 auto;
@@ -33,7 +34,7 @@ const DumeContent = styled.div`
 
 export default function MainPage() {
   return (
-    <>
+    <MainLayout>
       <Container>
         <BannerList></BannerList>
         <MainContainer className="flex">
@@ -50,6 +51,6 @@ export default function MainPage() {
           </MainContent>
         </MainContainer>
       </Container>
-    </>
+    </MainLayout>
   );
 }

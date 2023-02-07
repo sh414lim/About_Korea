@@ -6,7 +6,6 @@ import theme from "../styles/theme";
 import Script from "next/script";
 import GlobalStyle from "../styles/GlobalStyle";
 import { AnimatePresence } from "framer-motion";
-import Header from "../layout/Header";
 import cookies from "next-cookies";
 import { Context } from "vm";
 import { useEffect } from "react";
@@ -29,7 +28,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <SessionProvider session={pageProps.session}>
-          <Header />
           <Component {...pageProps} />
           <Script
             src="https://developers.kakao.com/sdk/js/kakao.js"
