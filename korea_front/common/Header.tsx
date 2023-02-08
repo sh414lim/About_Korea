@@ -2,12 +2,12 @@ import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
+/* header z-index 1 ~ 10 */
 const Container = styled.div`
   position: relative;
   width: 100%;
   height: 4rem;
-  background-color: ${(props) => props.theme.colors.one};
-  z-index: 10;
+  background: #fff;
   box-shadow: 0 5px 10px #00000026;
   z-index: 10;
 `;
@@ -15,61 +15,40 @@ const Container = styled.div`
 const Logo = styled.div`
   position: absolute;
   top: 50%;
+  left: 5%;
+  color: ${(props) => props.theme.globalColors.main};
+  font-size: 20px;
+  font-weight: 700;
+  transform: translate(0%, -50%);
+`;
+
+const GolbalMenuList = styled.ul`
+  position: relative;
+  display: inline-flex;
+  top: 50%;
   left: 50%;
-  font-size: 36px;
+  gap: 0 4rem;
   transform: translate(-50%, -50%);
 `;
 
+const GolbalMenu = styled.li`
+  position: relative;
+  font-size: 18px;
+  font-weight: 700;
+`;
+
 const MyPageMenu = styled.div`
+  position: absolute;
   display: flex;
   gap: 0 1rem;
-  position: absolute;
   top: 50%;
-  right: 0;
-  padding: 0 1rem;
+  right: 5%;
   transform: translate(0%, -50%);
-  & .Menu-btn {
-    padding: 0.2rem 1.5rem;
-    background: #3846ff;
-    color: #fff;
-    border-radius: 5px;
-    box-shadow: 3px 3px 5px #00000026;
+  & .Menu-mypage {
+    color: #333;
   }
 `;
-// const MypageContainer = styled.div`
-//   display: flex;
-//   justify-content: end;
-//   margin: 0px 30px 0px 0px;
-// `;
 
-// const Title = styled.h5`
-//   top: 0;
-//   &:hover {
-//     color: gray;
-//     transition: 0.3s;
-//   }
-// `;
-
-// const LogoContainer = styled.div`
-//   display: flex;
-//   font-size: 40px;
-//   justify-content: end;
-//   align-content: center;
-//   align-items: center;
-// `;
-
-// const MypageGroup = styled.ul`
-//   display: flex;
-//   font-size: 17px;
-// `;
-
-// const MypageList = styled.li`
-//   padding: 10px;
-//   &:hover {
-//     color: gray;
-//     transition: 0.3s;
-//   }
-// `;
 
 export default function Header() {
   return (
@@ -77,11 +56,33 @@ export default function Header() {
       <Logo>
         <Link href="/">About KOREA</Link>
       </Logo>
+      <GolbalMenuList>
+        <GolbalMenu>
+          <Link href="/" className="Menu-main">
+            Home
+          </Link>
+        </GolbalMenu>
+        <GolbalMenu>
+          <Link href="/" className="Menu-main">
+            Product
+          </Link>
+        </GolbalMenu>
+        <GolbalMenu>
+          <Link href="/" className="Menu-main">
+            About
+          </Link>
+        </GolbalMenu>
+        <GolbalMenu>
+          <Link href="/" className="Menu-main">
+            Blog
+          </Link>
+        </GolbalMenu>
+      </GolbalMenuList>
       <MyPageMenu>
-        <Link className="Menu-btn" href="/login/LoginPage">
+        <Link className="Menu-mypage" href="/login/LoginPage">
           LOGIN
         </Link>
-        <Link className="Menu-btn" href="/login/SignUpPage">
+        <Link className="Menu-mypage" href="/login/SignUpPage">
           SIGNUP
         </Link>
       </MyPageMenu>
