@@ -23,6 +23,7 @@ const Logo = styled.div`
   top: 50%;
   left: 5%;
   color: ${(props) => props.theme.globalColors.main};
+  font-size: 20px;
   font-weight: 700;
   transform: translate(0%, -50%);
 `;
@@ -51,6 +52,11 @@ const MyPageMenu = styled.div`
   transform: translate(0%, -50%);
   & .Menu-mypage {
     color: #333;
+    padding: 0.2rem 1.5rem;
+    background: #3846ff;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px #00000026;
   }
 `;
 
