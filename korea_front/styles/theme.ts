@@ -1,24 +1,12 @@
-const size = {
-  mobile: "600px",
-  tablet: "900px",
-  laptop: "1200px",
-  desktop: "1800px",
+import { DefaultTheme } from "styled-components";
+
+const theme: DefaultTheme = {
+  borderRadius: "5px",
+
+  colors: {
+    one: "cyan",
+    두번째: "magenta",
+  },
 };
 
-const theme = {
-  mainColor: "#0a4297",
-  mobile: `(max-width: ${size.mobile})`,
-  tablet: `(max-width: ${size.tablet})`,
-  laptop: `(max-width: ${size.laptop})`,
-  desktop: `(min-width: ${size.desktop})`,
-};
-
-export default theme;
-// @media ${(props) => props.theme.laptop} {
-// }
-
-// @media ${(props) => props.theme.tablet} {
-// }
-
-// @media ${(props) => props.theme.mobile} {
-// }
+export { theme };

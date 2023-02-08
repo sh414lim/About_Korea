@@ -6,7 +6,7 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   height: 4rem;
-  background: #ffffffc5;
+  background-color: ${(props) => props.theme.colors.one};
   z-index: 10;
   box-shadow: 0 5px 10px #00000026;
   z-index: 10;
@@ -27,7 +27,7 @@ const MyPageMenu = styled.div`
   top: 50%;
   right: 0;
   padding: 0 1rem;
-  transform: translate( 0%, -50%);
+  transform: translate(0%, -50%);
   & .Menu-btn {
     padding: 0.2rem 1.5rem;
     background: #3846ff;
@@ -75,13 +75,15 @@ export default function Header() {
   return (
     <Container>
       <Logo>
-        <Link href="/">
-          About KOREA
-        </Link>
+        <Link href="/">About KOREA</Link>
       </Logo>
       <MyPageMenu>
-        <Link className="Menu-btn" href="/login/LoginPage">LOGIN</Link>
-        <Link className="Menu-btn" href="/login/SignUpPage">SIGNUP</Link>
+        <Link className="Menu-btn" href="/login/LoginPage">
+          LOGIN
+        </Link>
+        <Link className="Menu-btn" href="/login/SignUpPage">
+          SIGNUP
+        </Link>
       </MyPageMenu>
       {/* <LogoContainer>
         <Link href="/">
