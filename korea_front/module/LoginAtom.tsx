@@ -1,6 +1,5 @@
-// import { atom } from "recoil";
-
-// export const LoginToken  = atom({
-//     key:'token',
-//     default
-// })
+import { atom } from "recoil";
+export const fontSizeState = atom({
+  key: "fontSizeState",
+  default: 14,
+});

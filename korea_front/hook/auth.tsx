@@ -1,3 +1,6 @@
+import Cookies from "js-cookie";
+import { useRouter } from "next/router";
+import Swal from "sweetalert2";
 import { ItokenType } from "../types/login/LoginTypes";
 
 export const getJwtToken = () => {
@@ -18,4 +21,17 @@ export const setRefreshToken = (token: string) => {
 
 export const handleLogin = (token: ItokenType) => {
   // const {
+};
+export const requestLogOut = () => {
+  Swal.fire({
+    icon: "success",
+    title: "LogOut",
+    text: "Success LogOut",
+    confirmButtonText: "LogOut",
+  }).then((res) => {
+    if (res.isConfirmed) {
+      Cookies.remove("token");
+      location.reload();
+    }
+  });
 };

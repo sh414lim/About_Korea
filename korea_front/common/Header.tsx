@@ -1,6 +1,12 @@
+import Cookies from "js-cookie";
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
+import { selector, useRecoilState, useRecoilValue } from "recoil";
 import styled from "styled-components";
+import Swal from "sweetalert2";
+import { requestLogOut } from "../hook/auth";
+import { fontSizeState } from "../module/LoginAtom";
 
 const Container = styled.div`
   position: relative;
@@ -36,71 +42,50 @@ const MyPageMenu = styled.div`
     box-shadow: 3px 3px 5px #00000026;
   }
 `;
-// const MypageContainer = styled.div`
-//   display: flex;
-//   justify-content: end;
-//   margin: 0px 30px 0px 0px;
-// `;
 
-// const Title = styled.h5`
-//   top: 0;
-//   &:hover {
-//     color: gray;
-//     transition: 0.3s;
-//   }
-// `;
-
-// const LogoContainer = styled.div`
-//   display: flex;
-//   font-size: 40px;
-//   justify-content: end;
-//   align-content: center;
-//   align-items: center;
-// `;
-
-// const MypageGroup = styled.ul`
-//   display: flex;
-//   font-size: 17px;
-// `;
-
-// const MypageList = styled.li`
-//   padding: 10px;
-//   &:hover {
-//     color: gray;
-//     transition: 0.3s;
-//   }
-// `;
+const LogOutButton = styled.button`
+  padding: 0.2rem 1.5rem;
+  background: #3846ff;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px #00000026;
+`;
 
 export default function Header() {
+  const [currentToken, setCurrentToken] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    const checkCookie = Cookies.get("token");
+    if (checkCookie) {
+      setCurrentToken(true);
+    }
+  }, [currentToken]);
+
   return (
     <Container>
       <Logo>
         <Link href="/">About KOREA</Link>
       </Logo>
       <MyPageMenu>
-        <Link className="Menu-btn" href="/login/LoginPage">
-          LOGIN
-        </Link>
-        <Link className="Menu-btn" href="/login/SignUpPage">
-          SIGNUP
-        </Link>
+        {currentToken ? (
+          <>
+            <Link className="Menu-btn" href="/login/LoginPage">
+              Mypage
+            </Link>
+            <LogOutButton onClick={requestLogOut}>LogOut</LogOutButton>
+          </>
+        ) : (
+          <>
+            <Link className="Menu-btn" href="/login/LoginPage">
+              LOGIN
+            </Link>
+            <Link className="Menu-btn" href="/login/SignUpPage">
+              SIGNUP
+            </Link>
+          </>
+        )}
       </MyPageMenu>
-      {/* <LogoContainer>
-        <Link href="/">
-          <Title>About KOREA</Title>
-        </Link>
-      </LogoContainer>
-      <MypageContainer>
-        <MypageGroup>
-          <MypageList>
-            <Link href="/login/LoginPage">LOGIN</Link>
-          </MypageList>
-          <MypageList>
-            <Link href="/login/SignUpPage">SIGNUP</Link>
-          </MypageList>
-          <MypageList>INFO</MypageList>
-        </MypageGroup>
-      </MypageContainer> */}
     </Container>
   );
 }

@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { useSpring, animated } from "react-spring";
 import Swal from "sweetalert2";
 import Cookies from "js-cookie";
+import axios from "axios";
 
 const Box = styled.div`
   display: flex;
@@ -103,6 +104,10 @@ export default function LoginInput({ setInputMode }: any) {
         //로그인 방식 스토리지 vs cookie 방식 분석 필요
         // localStorage.setItem("token", token);
         //RECOIL 방식 사용 예쩡
+        if (res.token) {
+          Cookies.set("token", `Bearer ${res.token}`);
+        }
+        console.log(res.token);
 
         if (res.ok) {
           Swal.fire({
@@ -112,7 +117,7 @@ export default function LoginInput({ setInputMode }: any) {
             confirmButtonText: "Login",
           }).then((res) => {
             if (res.isConfirmed) {
-              Cookies.set("token", token, { expires: 7 });
+              axios.defaults.headers.Authorization = `Bearer ${token}`;
               router.push("/");
             }
           });
@@ -125,7 +130,6 @@ export default function LoginInput({ setInputMode }: any) {
 
   useEffect(() => {
     const cookie = Cookies.get("token");
-    console.log(cookie);
   }, [token]);
   return (
     <>
