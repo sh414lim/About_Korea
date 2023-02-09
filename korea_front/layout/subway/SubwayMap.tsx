@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { ImgObject } from "../../components/img";
 import { useSpring, animated } from "react-spring";
 import Link from "next/link";
 import axios from "axios";
@@ -86,9 +85,7 @@ export default function SubwayMap() {
         ></Map>
       </MapBox>
       <SubContainer>
-        <FindMap>
-          <SubImg src={ImgObject.findMap} />
-        </FindMap>
+        <FindMap>{/* <SubImg src={ImgObject.findMap} /> */}</FindMap>
         <FindMap>123</FindMap>
         <FindMap>123</FindMap>
       </SubContainer>

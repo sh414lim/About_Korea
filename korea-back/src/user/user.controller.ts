@@ -18,11 +18,16 @@ interface Ilogin {
 export class UserController {
   constructor(private readonly userSservice: UserService) {}
   @Get()
-  getUesr() {
-    return this.userSservice.getUser();
+  getALLUesr() {
+    return this.userSservice.getALLUser();
   }
 
-  @Post()
+  @Get('/info')
+  getUser(id: number) {
+    return this.userSservice.getUser(id);
+  }
+
+  @Post('/sign_up')
   create(@Body() params: test) {
     return this.userSservice.createUser(params);
   }

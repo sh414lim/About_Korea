@@ -13,11 +13,13 @@ const Container = styled.div`
 
 export default function MainPage() {
   const key =
-    "lSYafr8mWAHjJY9zI+icXapVH6wmF8GdoaLFug2WmrNT52RZzF3Ls7gfWjKK+GssWRGtowqtiZ+mTgWrS2/low==";
+    "lSYafr8mWAHjJY9zI+69426243707368343131374841444352+GssWRGtowqtiZ+mTgWrS2/low==";
   useEffect(() => {
+    //추후 인증키 => .env 로 변환
+    console.log(process.env);
     axios
       .get(
-        `http://openapi.seoul.go.kr:8088/${process.env}/xml/SebcCollegeInfoKor/1/5/`
+        `http://openapi.seoul.go.kr:8088/69426243707368343131374841444352/json/SebcCollegeInfoKor/1/20/`
       )
       .then((res) => {
         console.log(res);

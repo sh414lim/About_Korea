@@ -6,7 +6,8 @@ import { selector, useRecoilState, useRecoilValue } from "recoil";
 import styled from "styled-components";
 import Swal from "sweetalert2";
 import { requestLogOut } from "../hook/auth";
-import { fontSizeState } from "../module/LoginAtom";
+import { UserInfo } from "../module/atoms/UserAtoms";
+import { RequestUserInfoApi } from "../pages/api/auth/api";
 
 /* header z-index 1 ~ 10 */
 const Container = styled.div`
@@ -70,13 +71,16 @@ const LogOutButton = styled.button`
 
 export default function Header() {
   const [currentToken, setCurrentToken] = useState(false);
-  const router = useRouter();
+  const [userId, setUserId] = useState(1);
+  const [user, setUser] = useRecoilState(UserInfo);
 
+  const router = useRouter();
   useEffect(() => {
     const checkCookie = Cookies.get("token");
     if (checkCookie) {
       setCurrentToken(true);
     }
+    RequestUserInfoApi(1);
   }, [currentToken]);
 
   return (
@@ -109,7 +113,7 @@ export default function Header() {
       <MyPageMenu>
         {currentToken ? (
           <>
-            <Link className="Menu-btn" href="/login/LoginPage">
+            <Link className="Menu-btn" href={`/detail/Mypage?id=`}>
               Mypage
             </Link>
             <LogOutButton onClick={requestLogOut}>LogOut</LogOutButton>
