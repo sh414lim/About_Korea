@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinifyLtrue: true,
+  env: {
+    BASE_URL: process.env.BASE_URL,
+  },
   compiler: {
     styledComponents: true,
   },

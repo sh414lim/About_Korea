@@ -118,6 +118,7 @@ export default function LoginInput({ setInputMode }: any) {
           }).then((res) => {
             if (res.isConfirmed) {
               axios.defaults.headers.Authorization = `Bearer ${token}`;
+
               router.push("/");
             }
           });

@@ -20,6 +20,13 @@
 # misc
 .DS_Store
 *.pem
+# Tests
+/coverage
+/.nyc_output
+.env
+.dev
+.prod
+.test
 
 # debug
 npm-debug.log*

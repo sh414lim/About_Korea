@@ -1,4 +1,5 @@
 import axios from "axios";
+import { resolve } from "path/posix";
 import Swal from "sweetalert2";
 
 export const PostSignUpApi = (
@@ -13,7 +14,7 @@ export const PostSignUpApi = (
   };
   return new Promise((resolve, reject) => {
     axios
-      .post("http://localhost:8000/user", params)
+      .post("http://localhost:8000/user/sign_up", params)
       .then((res) => {
         // console.log(res.data);
         let isSuccess: boolean = res.data.ok;
@@ -58,4 +59,16 @@ export const RequestloginApi = (Uemail: string, Upassword: string) => {
         reject(error);
       });
   });
+};
+
+export const RequestUserInfoApi = (id: any) => {
+  axios
+    .get("http://localhost:8000/user/info", id)
+    .then((res) => {
+      console.log(777);
+      console.log(res);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };

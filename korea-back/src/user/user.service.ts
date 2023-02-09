@@ -103,7 +103,7 @@ export class UserService {
     }
   }
 
-  async findById(id: number): Promise<Boolean> {
+  async JwtFindById(id: number): Promise<Boolean> {
     try {
       const user = await this.user.findOne({ where: { id } });
       if (user) {
@@ -114,7 +114,20 @@ export class UserService {
     }
   }
 
-  async getUser() {
+  async getUser(id: number) {
+    try {
+      const user = await this.user.findOne({ where: { id } });
+      console.log(user);
+      return true;
+    } catch (error) {
+      return {
+        ok: false,
+        error,
+      };
+    }
+  }
+
+  async getALLUser() {
     try {
       const users = await this.user.find();
       console.log(users);
