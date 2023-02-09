@@ -1,9 +1,9 @@
-import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
 import { SessionProvider } from "next-auth/react";
 import Script from "next/script";
 import GlobalStyle from "../styles/GlobalStyle";
+import "../styles/globals.css";
 import { AnimatePresence } from "framer-motion";
 import cookies from "next-cookies";
 import { Context } from "vm";

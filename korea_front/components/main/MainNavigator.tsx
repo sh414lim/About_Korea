@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const MainContainer = styled.div`
-  max-width: 85%;
+  max-width: 90%;
   width: 100%;
   margin: 2rem auto;
   &.flex {
@@ -18,19 +18,40 @@ const MainContent = styled.div`
   }
 `;
 
-const DumeContent = styled.div`
-  height: 30vh;
-  border-radius: 5px;
-  box-shadow: 3px 5px 10px #00000026;
-  padding: 0.5rem;
+const NavTitle = styled.h2`
+  font-size: 2rem;
+`;
+
+const MainNavList = styled.ul`
+  display: flex;
+`;
+
+const MainNavItem = styled.li`
+  font-size: 2rem;
 `;
 
 export default function MainNavigator() {
   return (
     <>
-      <MainContainer className="flex">
-        <MainContent>
-          <DumeContent>더미 컨텐츠</DumeContent>
+      <MainContainer>
+        <MainContent className="main-nav">
+          <NavTitle>
+            About Another
+          </NavTitle>
+          <MainNavList>
+            <MainNavItem>
+              <h2>Product</h2>
+              <p>더미 텍스트</p>
+            </MainNavItem>
+            <MainNavItem>
+              <h2>Product</h2>
+              <p>더미 텍스트</p>
+            </MainNavItem>
+            <MainNavItem>
+              <h2>Product</h2>
+              <p>더미 텍스트</p>
+            </MainNavItem>
+          </MainNavList>
         </MainContent>
       </MainContainer>
     </>

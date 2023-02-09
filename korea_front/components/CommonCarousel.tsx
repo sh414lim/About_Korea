@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useSpring, animated } from "react-spring";
 import { ImgObject } from "../common/img";
 
+
 const CateImg = styled.img`
   object-fit: cover;
   width: 60vw;
