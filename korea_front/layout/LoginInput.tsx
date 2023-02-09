@@ -96,7 +96,7 @@ export default function LoginInput({ setInputMode }: any) {
 
   const router = useRouter();
 
-  const handleSignUp = () => {
+  const handleLogin = () => {
     RequestloginApi(Uemail, Upassword)
       .then((res: any) => {
         console.log(res);
@@ -148,12 +148,13 @@ export default function LoginInput({ setInputMode }: any) {
             <SignInput
               type="password"
               placeholder="PASSWORD"
+              onKeyPress={handleLogin}
               onChange={(e) => {
                 setpassword(e.target.value);
               }}
             />
           </InputItem>
-          <LoginButton onClick={handleSignUp}>Sign In</LoginButton>
+          <LoginButton onClick={handleLogin}>Sign In</LoginButton>
           <Link href="/login/SignUpPage">
             <SignUpButton>Do you want to sign up?</SignUpButton>
           </Link>
