@@ -20,7 +20,9 @@ export default function ListPage({}: Props) {
 
   return (
     <Container>
-      <MainLayout>123</MainLayout>
+      <MainLayout>
+        메인 레이아웃에서 
+      </MainLayout>
     </Container>
   );
 }

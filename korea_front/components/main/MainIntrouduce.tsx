@@ -18,17 +18,15 @@ const MainContent = styled.div`
   }
 `;
 
-const DumeContent = styled.div`
-  height: 30vh;
-  border-radius: 5px;
-  box-shadow: 3px 5px 10px #00000026;
-  padding: 0.5rem;
+const ContentItem = styled.div`
 `;
 export default function MainIntrouduce() {
   return (
     <MainContainer className="flex">
       <MainContent>
-        <DumeContent>더미 컨텐츠</DumeContent>
+        <ContentItem>
+
+        </ContentItem>
       </MainContent>
     </MainContainer>
   );
