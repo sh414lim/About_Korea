@@ -36,62 +36,31 @@ const BannerListImg = styled.div`
 `;
 const BannerTitle = styled.h2`
   font-size: 4.5vw;
-  color: white;
+  color: #151516;
   font-weight: 900;
-`;
-const BannerCateSubTitle = styled.p`
-  font-size: 1vw;
-  color: white;
 `;
 
 export default function MainBanner({ currentRoute }: Iroute) {
   return (
     <>
-      {currentRoute != "" ? (
-        <>
-          <BannerListImg>
-            <BannerText>
-              <BannerTitle>About Korea</BannerTitle>
-              <BannerCateSubTitle>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum
-                explicabo labore iste animi cumque aperiam dolores, earum
-                incidunt, quasi corrupti rem molestiae accusamus deserunt
-                corporis aspernatur alias. Quasi excepturi ipsum labore fuga
-                nemo blanditiis, ipsa cumque perferendis voluptatem sed
-                repellendus aut hic? Dolorem a eum recusandae id obcaecati quam
-                accusantium laboriosam atque natus aspernatur esse animi vitae,
-                nihil exercitationem nesciunt dolore minima ipsum aut unde eius
-                dolorum. Est voluptatum nostrum numquam in inventore. Commodi ab
-                ullam alias nostrum veniam atque possimus odio ex itaque.
-                Tenetur aspernatur eaque nobis voluptas eius dolor iste autem
-                expedita neque, ullam deserunt velit rerum quod.
-              </BannerCateSubTitle>
-            </BannerText>
-          </BannerListImg>
-        </>
-      ) : (
-        <>
-          <BannerList>
-            <BannerText>
-              <BannerMainTitle>About Korea</BannerMainTitle>
-              <BannerSubTitle>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum
-                explicabo labore iste animi cumque aperiam dolores, earum
-                incidunt, quasi corrupti rem molestiae accusamus deserunt
-                corporis aspernatur alias. Quasi excepturi ipsum labore fuga
-                nemo blanditiis, ipsa cumque perferendis voluptatem sed
-                repellendus aut hic? Dolorem a eum recusandae id obcaecati quam
-                accusantium laboriosam atque natus aspernatur esse animi vitae,
-                nihil exercitationem nesciunt dolore minima ipsum aut unde eius
-                dolorum. Est voluptatum nostrum numquam in inventore. Commodi ab
-                ullam alias nostrum veniam atque possimus odio ex itaque.
-                Tenetur aspernatur eaque nobis voluptas eius dolor iste autem
-                expedita neque, ullam deserunt velit rerum quod.
-              </BannerSubTitle>
-            </BannerText>
-          </BannerList>
-        </>
-      )}
+      <BannerList>
+        <BannerText>
+          <BannerMainTitle>About Korea</BannerMainTitle>
+          <BannerSubTitle>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum
+            explicabo labore iste animi cumque aperiam dolores, earum incidunt,
+            quasi corrupti rem molestiae accusamus deserunt corporis aspernatur
+            alias. Quasi excepturi ipsum labore fuga nemo blanditiis, ipsa
+            cumque perferendis voluptatem sed repellendus aut hic? Dolorem a eum
+            recusandae id obcaecati quam accusantium laboriosam atque natus
+            aspernatur esse animi vitae, nihil exercitationem nesciunt dolore
+            minima ipsum aut unde eius dolorum. Est voluptatum nostrum numquam
+            in inventore. Commodi ab ullam alias nostrum veniam atque possimus
+            odio ex itaque. Tenetur aspernatur eaque nobis voluptas eius dolor
+            iste autem expedita neque, ullam deserunt velit rerum quod.
+          </BannerSubTitle>
+        </BannerText>
+      </BannerList>
     </>
   );
 }
