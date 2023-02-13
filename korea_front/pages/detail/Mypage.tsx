@@ -68,8 +68,8 @@ const FavoriteContainer = styled.div`
 
 const UserContainer = styled.div`
   height: 77.5vh;
-  width: 30vw;
-  margin: 12px 0px 0px 0px;
+  width: 33vw;
+  margin: 12px 50px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `;
 
