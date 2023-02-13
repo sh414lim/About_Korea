@@ -40,7 +40,7 @@ const BannerTitle = styled.h2`
   font-weight: 900;
 `;
 
-export default function MainBanner({ currentRoute }: Iroute) {
+export default function MainBanner() {
   return (
     <>
       <BannerList>

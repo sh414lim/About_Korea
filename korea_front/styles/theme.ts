@@ -4,7 +4,7 @@ const theme: DefaultTheme = {
   borderRadius: "5px",
 
   globalColors: {
-    main: "#3846ff",
+    main: "#0576E6",
     sub1: "",
     sub2: "",
   },

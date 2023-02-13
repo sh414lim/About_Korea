@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const MainContainer = styled.div`
   max-width: 85%;
@@ -25,8 +27,13 @@ const DumeContent = styled.div`
   padding: 0.5rem;
 `;
 export default function MainIntrouduce() {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  });
   return (
-    <MainContainer className="flex">
+    <MainContainer data-aos="fade-up" className="flex">
       <MainContent>
         <DumeContent>더미 컨텐츠</DumeContent>
       </MainContent>
