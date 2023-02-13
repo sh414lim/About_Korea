@@ -44,17 +44,17 @@ const GolbalMenu = styled.li`
     display: inline-flex;
     font-size: 18px;
     font-weight: 500;
-    transition: all .2s;
+    transition: all 0.2s;
     &:hover {
       color: ${(props) => props.theme.globalColors.main};
-      transition: all .2s;
+      transition: all 0.2s;
     }
-    &.on{
+    &.on {
       position: relative;
       font-weight: 700;
       color: ${(props) => props.theme.globalColors.main};
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -17px;
         width: 100%;
@@ -109,7 +109,7 @@ export default function Header() {
           </Link>
         </GolbalMenu>
         <GolbalMenu>
-          <Link href="/" className="Menu-main">
+          <Link href="/college/ListPage" className="Menu-main">
             Product
           </Link>
         </GolbalMenu>
