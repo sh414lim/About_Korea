@@ -32,7 +32,9 @@ const MainContent = styled.div`
 const DumeContent = styled.div`
   height: 30vh;
   border-radius: 5px;
-  box-shadow: 3px 5px 10px #00000026;
+  font-size: 20px;
+  font-weight: bold;
+  /* box-shadow: 3px 5px 10px #00000026; */
   padding: 0.5rem;
 `;
 
@@ -69,13 +71,17 @@ export default function MainPage() {
         </MainContainer>
         <MainContainer data-aos="fade-up-left" className="flex">
           <MainContent>
+            <DumeContent>THIS IS The course pocess for you</DumeContent>
+          </MainContent>
+        </MainContainer>
+        <MainContainer data-aos="flip-left" className="flex">
+          <MainContent>
             <DumeContent>더미 컨텐츠3</DumeContent>
           </MainContent>
         </MainContainer>
-
-        <MainContainer data-aos="zoom-in-up" className="flex">
+        <MainContainer data-aos="fade-up-left" className="flex">
           <MainContent>
-            <DumeContent>더미 컨텐츠4</DumeContent>
+            <DumeContent>더미 컨텐츠3</DumeContent>
           </MainContent>
         </MainContainer>
       </Container>
