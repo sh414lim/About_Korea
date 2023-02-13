@@ -22,7 +22,7 @@ const Backdrop = styled.div`
   left: 0;
   height: 100vh;
   width: 100vw;
-  background-image: url(${ImgObject.subwayDemo});
+  mage: url(${ImgObject.subwayDemo});
   background-position: center center;
   background-size: cover;
   filter: blur(3px);

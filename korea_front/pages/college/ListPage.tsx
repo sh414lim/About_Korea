@@ -4,30 +4,23 @@ import MainBanner from "../../components/main/MainBanner";
 import MainLayout from "../../layout/main/MainLayout";
 import styled from "styled-components";
 import SideMenu from "../../common/SideMenu";
+import CategoryLayout from "../../layout/category/CategoryLayout";
 
 const Container = styled.div`
   height: 100vh;
   width: 100vw;
 `;
 
-const ListGroup = styled.div`
-  height: 80vh;
-  background-color: #ebebeb;
-`;
-
 type Props = {};
 
 export default function ListPage({}: Props) {
   const router = useRouter();
+  const currrentRoute = "college";
+  console.log(router);
 
   return (
     <Container>
-      <MainLayout>
-        <MainBanner />
-        <ListGroup>
-          <SideMenu />
-        </ListGroup>
-      </MainLayout>
+      <MainLayout>123</MainLayout>
     </Container>
   );
 }

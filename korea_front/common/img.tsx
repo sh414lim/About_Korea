@@ -21,4 +21,6 @@ export const ImgObject = {
   subwayMap: "http://gw.sejongh.co.kr/pinfo/image/subway_01.jpg",
   findMap:
     "https://images.unsplash.com/photo-1604357209793-fca5dca89f97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8JUVBJUI4JUI4JUVDJUIwJUJFJUVBJUI4JUIwfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+  college:
+    "https://images.unsplash.com/photo-1583373834259-46cc92173cb7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
 };
