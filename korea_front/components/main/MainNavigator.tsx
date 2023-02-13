@@ -27,56 +27,68 @@ const MainContent = styled.div`
   &.half {
     width: 49%;
   }
+  &.main-nav {
+    display: flex;
+    align-items: center;
+    margin: 4rem 0;
+    padding: 0 4rem 2rem 4rem;
+    border-radius: 3rem;
+    background: ${(props) => props.theme.globalColors.main};
+    box-shadow: 3px 5px 10px #00000026;
+  }
 `;
 const TitleBox = styled.div``;
 
 const NavTitle = styled.h2`
-  font-size: 2rem;
-  width: 20vw;
-  height: 20vh;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  color: white;
-  font-weight: bold;
-  /* background-color: yellow; */
+  width: 20%;
+  margin-top: 2rem;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.2;
 `;
 
 const MainNavList = styled.ul`
   display: flex;
-  height: 20vh;
+
+  width: 80%;
 `;
 
 const MainNavItem = styled.li`
-  font-size: 2rem;
-  margin: 0px 10px 0px 0px;
-  width: 17vw;
-  border-radius: 0px 5px 10px 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  box-shadow: 3px 3px 5px #00000026;
-  margin: 20px;
+  width: 100%;
+  padding: 4rem 2rem 2rem 2rem;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  transition: all 0.2s;
   &:hover {
-    background-color: #a5c4e3;
+    background: ${(props) => props.theme.globalColors.sub1};
+    transition: all 0.2s;
+    & div {
+      box-shadow: 3px 5px 10px #00000026;
+      transition: all 0.2s;
+    }
   }
-`;
-const ItemTitle = styled.span`
-  color: white;
-`;
-
-const IconBox = styled.div`
-  background-color: white;
-  border: box;
-  width: 7vw;
-  height: 8vh;
-  border-radius: 10px;
-  /* color: yellow; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  & div {
+    background: #fff;
+    width: 120px;
+    height: 120px;
+    border-radius: 1rem;
+    transition: all 0.2s;
+  }
+  & h2 {
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  & p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+  }
 `;
 
 export default function MainNavigator() {
@@ -84,24 +96,36 @@ export default function MainNavigator() {
     <>
       <MainContainer>
         <MainContent className="main-nav">
+          <NavTitle>
+            About
+            <br />
+            Another
+          </NavTitle>
           <MainNavList>
             <MainNavItem>
-              <IconBox>
-                <RateReviewIcon fontSize="large" />
-              </IconBox>
-              <ItemTitle>123</ItemTitle>
+              <div></div>
+              <h2>Product</h2>
+              <p>더미 텍스트</p>
             </MainNavItem>
             <MainNavItem>
-              <PublicIcon sx={{ color: "blue" }} fontSize="large" />
-              <ItemTitle>123</ItemTitle>
+              <div></div>
+              <h2>About</h2>
+              <p>더미 텍스트</p>
             </MainNavItem>
             <MainNavItem>
-              <AccountBalanceIcon />
-              <ItemTitle>123</ItemTitle>
+              <div></div>
+              <h2>Blog</h2>
+              <p>더미 텍스트</p>
             </MainNavItem>
             <MainNavItem>
-              <LocalAirportIcon />
-              <ItemTitle>123</ItemTitle>
+              <div></div>
+              <h2>Sign-Up</h2>
+              <p>더미 텍스트</p>
+            </MainNavItem>
+            <MainNavItem>
+              <div></div>
+              <h2>Sign-Up</h2>
+              <p>더미 텍스트</p>
             </MainNavItem>
           </MainNavList>
         </MainContent>

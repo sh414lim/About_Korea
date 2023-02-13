@@ -9,8 +9,7 @@ interface Iroute {
 const BannerList = styled.div`
   max-width: 90%;
   width: 100%;
-  margin: 0 auto;
-  padding: 2rem 0;
+  margin: 4rem auto;
   background: #ffffff;
 `;
 
