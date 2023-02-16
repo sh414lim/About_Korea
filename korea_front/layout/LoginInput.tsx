@@ -8,66 +8,134 @@ import { useSpring, animated } from "react-spring";
 import Swal from "sweetalert2";
 import Cookies from "js-cookie";
 import axios from "axios";
+import { AnimatedContainer } from "../common/AnimatedRouterEvent";
 
 const Box = styled.div`
-  display: flex;
-  justify-items: center;
-  justify-content: center;
-  /* align-content: center; */
+  width: 60vw;
   top: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-const InputGroup = styled.ul`
+const ImgBox = styled.div`
+  width: 40vw;
+  height: 100vh;
+  background-position: center center;
+  background-size: cover;
+  /* filter: blur(1.5px); */
+  /* height: 45vh; */
+  /* width: 100vw; */
+  /* position: absolute; */
+`;
+
+const TextBox = styled.div`
+  z-index: 0;
+  background-color: black;
+  width: 40vw;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+`;
+
+const Container = styled.div`
+  display: flex;
+  width: 100vw;
+  height: 70vh;
+`;
+
+const TiTleGroup = styled.div`
+  color: white;
+`;
+const CommentGroup = styled.ul`
+  margin: 0px 0px 100px 0px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 `;
 
+const CommentItem = styled.li`
+  padding: 20px;
+`;
+
+const CommentTitle = styled.h1`
+  font-size: 40px;
+  font-weight: bold;
+`;
+
+const CommentDec = styled.span`
+  font-size: 25px;
+  font-weight: bold;
+`;
+
+const CommentButton = styled.button`
+  font-size: 20px;
+  padding: 19px 150px 19px 150px;
+  background-color: black;
+  color: white;
+  border: 3px solid white;
+  border-radius: 20px;
+  margin: 30px 0px 0px 0px;
+  &:hover {
+    background-color: white;
+    color: black;
+    transition: 0.3s;
+  }
+`;
+
+const InputGroup = styled.ul``;
+
 const InputItem = styled.li`
+  /* align-content: flex-start; */
+  /* justify-items: flex-start; */
+`;
+
+const InputTitle = styled.h1`
   display: flex;
-  align-content: flex-start;
-  justify-items: flex-start;
+  justify-content: center;
+  padding: 0px 0px 10px 0px;
+  align-items: center;
+  font-size: 60px;
+  font-weight: bold;
+`;
+
+const InputDec = styled.span`
+  display: flex;
+  justify-content: center;
+  padding: 0px 0px 30px 0px;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: grey;
 `;
 
 const SignInput = styled.input`
   font-size: 20px;
-  width: 23vw;
-  height: 7vh;
-  margin: 10px;
+  width: 29vw;
+  height: 7.5vh;
+  margin: 10px 10px 10px 30px;
   border-radius: 10px;
-  border: 3px solid black;
-  @media ${(props) => props.theme.mobile} {
-    font-size: 15px;
-    width: 180px;
-    height: 35px;
-  }
+  background-color: #eaeeed;
+  padding: 10px;
+  border: none;
 `;
 
 const LoginButton = styled.button`
   /* width: 80%; */
-  margin: 20px 0px 0px 00px;
+  margin: 20px 0px 0px 30px;
   height: 5.5vh;
-  width: 23vw;
+  width: 29vw;
   background-color: black;
   border: none;
   color: white;
   font-size: 20px;
-  border-radius: 10px;
-  &:hover {
-    box-shadow: rgba(0, 0, 0, 0.15) 5.95px 5.95px 4.6px;
-    background-color: gray;
-    transition: 0.5s;
-    /* transform: 0.5s; */
-  }
-`;
-const SignUpButton = styled.button`
-  margin: 20px 0px 0px 00px;
-  height: 5.5vh;
-  width: 23vw;
-  background-color: black;
-  border: none;
-  color: white;
-  font-size: 20px;
-  border-radius: 10px;
+  border-radius: 20px;
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.15) 5.95px 5.95px 4.6px;
     background-color: gray;
@@ -132,35 +200,85 @@ export default function LoginInput({ setInputMode }: any) {
   useEffect(() => {
     const cookie = Cookies.get("token");
   }, [token]);
+
+  const springs = useSpring({
+    from: {
+      x: -1000,
+      transition: " 0.1s",
+    },
+    to: { x: 0 },
+  });
+
+  const InputSpring = useSpring({
+    from: {
+      x: 700,
+      transition: " 0.1s",
+    },
+    to: { x: 0 },
+  });
+
   return (
     <>
-      <Box>
-        <InputGroup>
-          <InputItem>
-            <SignInput
-              type="text"
-              placeholder="E-Mail"
-              onChange={(e) => {
-                setUemail(e.target.value);
-              }}
-            />
-          </InputItem>
-          <InputItem>
-            <SignInput
-              type="password"
-              placeholder="PASSWORD"
-              onKeyPress={handleLogin}
-              onChange={(e) => {
-                setpassword(e.target.value);
-              }}
-            />
-          </InputItem>
-          <LoginButton onClick={handleLogin}>Sign In</LoginButton>
-          <Link href="/login/SignUpPage">
-            <SignUpButton>Do you want to sign up?</SignUpButton>
-          </Link>
-        </InputGroup>
-      </Box>
+      <Container>
+        <Box>
+          <AnimatedContainer
+            style={{
+              ...InputSpring,
+            }}
+          >
+            <InputGroup>
+              <InputTitle>Login</InputTitle>
+              <InputDec>Please enter your registered information.</InputDec>
+              <InputItem>
+                <SignInput
+                  type="email"
+                  placeholder="E-Mail"
+                  onChange={(e) => {
+                    setUemail(e.target.value);
+                  }}
+                />
+              </InputItem>
+              <InputItem>
+                <SignInput
+                  type="password"
+                  placeholder="PASSWORD"
+                  onChange={(e) => {
+                    setpassword(e.target.value);
+                  }}
+                />
+              </InputItem>
+              <LoginButton onClick={handleLogin}>Login</LoginButton>
+            </InputGroup>
+          </AnimatedContainer>
+        </Box>
+        <ImgBox>
+          <AnimatedContainer
+            style={{
+              ...springs,
+            }}
+          >
+            <TextBox>
+              <TiTleGroup>
+                <CommentGroup>
+                  <CommentItem>
+                    <CommentTitle>Hello Friend!!</CommentTitle>
+                  </CommentItem>
+                  <CommentItem>
+                    <CommentDec>
+                      Did you make your first visit today?
+                    </CommentDec>
+                  </CommentItem>
+                  <CommentItem>
+                    <Link href="/login/SignUpPage">
+                      <CommentButton>SIGN UP</CommentButton>
+                    </Link>
+                  </CommentItem>
+                </CommentGroup>
+              </TiTleGroup>
+            </TextBox>
+          </AnimatedContainer>
+        </ImgBox>
+      </Container>
     </>
   );
 }

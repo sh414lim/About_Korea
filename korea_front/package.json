@@ -11,6 +11,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@hookform/resolvers": "^2.9.11",
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.8",
     "@next/font": "13.1.6",
@@ -42,6 +43,7 @@
     "react-cookies": "^0.1.1",
     "react-dom": "18.2.0",
     "react-google-login": "^5.2.2",
+    "react-hook-form": "^7.43.1",
     "react-kakao-maps-sdk": "^1.1.5",
     "react-responsive-carousel": "^3.2.23",
     "react-slick": "^0.29.0",
@@ -53,6 +55,7 @@
     "sweetalert2": "^11.7.1",
     "swiper": "^9.0.3",
     "typescript": "4.9.5",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "yup": "^1.0.0"
   }
 }

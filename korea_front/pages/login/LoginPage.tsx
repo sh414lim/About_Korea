@@ -14,8 +14,8 @@ export default function Login() {
     googleKey: process.env.GOOGLE_LOGIN_CLIENT_ID,
   };
   return (
-    <LoginLayout>
+    <>
       <LoginInput setInputMode={setInputMODE} />
-    </LoginLayout>
+    </>
   );
 }

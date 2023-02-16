@@ -2,16 +2,13 @@ import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
+import Header from "../../common/Header";
 
 const AllContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  background-color: black;
   height: 100vh;
   width: 100vw;
+  display: flex;
+  flex-direction: column;
 `;
 
 const TitleContainer = styled.div`
@@ -22,9 +19,7 @@ const TitleContainer = styled.div`
 const InputContainer = animated(styled.div`
   background-color: white;
   border-radius: 90px;
-  display: flex;
   justify-content: center;
-  flex-direction: column;
   width: 40vw;
   height: 70vh;
 `);
@@ -44,10 +39,13 @@ export default function LoginLayout({ children }: any) {
     // config: { mass: 5, tension: 500, friction: 80 },
   });
   return (
-    <AllContainer>
-      <InputContainer style={animationProps}>
+    <>
+      <Header />
+      <AllContainer>
+        {/* <InputContainer style={animationProps}> */}
         <main>{children}</main>
-      </InputContainer>
-    </AllContainer>
+        {/* </InputContainer> */}
+      </AllContainer>
+    </>
   );
 }
