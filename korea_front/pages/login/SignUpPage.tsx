@@ -33,11 +33,11 @@ const ImgBox = styled.div`
 `;
 
 const TextBox = styled.div`
-  z-index: 0;
+  /* z-index: 0; */
   background-color: black;
   width: 40vw;
   height: 100vh;
-  position: absolute;
+  /* position: absolute; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,6 +69,20 @@ const CommentItem = styled.li`
 const CommentTitle = styled.h1`
   font-size: 40px;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0px 0px 0px;
+`;
+
+const HomeTitle = styled.h1`
+  font-size: 40px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  &:hover {
+    color: ${(props) => props.theme.globalColors.main};
+    transition: 0.3s;
+  }
 `;
 
 const CommentDec = styled.span`
@@ -203,6 +217,9 @@ export default function SignUpInput({ setInputMode }: any) {
               <TiTleGroup>
                 <CommentGroup>
                   <CommentItem>
+                    <Link href="/">
+                      <HomeTitle>About KOREA</HomeTitle>
+                    </Link>
                     <CommentTitle>WELCOME BACK! Friends!</CommentTitle>
                   </CommentItem>
                   <CommentItem>

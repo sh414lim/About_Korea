@@ -9,8 +9,17 @@ interface Iroute {
 const BannerList = styled.div`
   max-width: 90%;
   width: 100%;
+  height: 70vh;
   margin: 4rem auto;
   background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url(${ImgObject.guide});
+  background-position: center center;
+  background-size: cover;
+  filter: blur(0.5px);
 `;
 
 const BannerText = styled.div`
@@ -21,10 +30,18 @@ const BannerMainTitle = styled.h2`
   font-size: 4.5vw;
   color: #151516;
   font-weight: 900;
+  display: flex;
+  color: ${(props) => props.theme.globalColors.main};
+  justify-content: center;
 `;
 const BannerSubTitle = styled.p`
-  font-size: 1vw;
+  font-size: 2.5vw;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #151516;
+  margin: 30px 0px 0px 0px;
 `;
 
 const BannerListImg = styled.div`
@@ -44,19 +61,9 @@ export default function MainBanner() {
     <>
       <BannerList>
         <BannerText>
-          <BannerMainTitle>About Korea</BannerMainTitle>
-          <BannerSubTitle>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum
-            explicabo labore iste animi cumque aperiam dolores, earum incidunt,
-            quasi corrupti rem molestiae accusamus deserunt corporis aspernatur
-            alias. Quasi excepturi ipsum labore fuga nemo blanditiis, ipsa
-            cumque perferendis voluptatem sed repellendus aut hic? Dolorem a eum
-            recusandae id obcaecati quam accusantium laboriosam atque natus
-            aspernatur esse animi vitae, nihil exercitationem nesciunt dolore
-            minima ipsum aut unde eius dolorum. Est voluptatum nostrum numquam
-            in inventore. Commodi ab ullam alias nostrum veniam atque possimus
-            odio ex itaque. Tenetur aspernatur eaque nobis voluptas eius dolor
-            iste autem expedita neque, ullam deserunt velit rerum quod.
+          <BannerMainTitle>About KOREA</BannerMainTitle>
+          <BannerSubTitle data-aos="zoom-in">
+            'About KOREA' will be your guide for your life in Korea.
           </BannerSubTitle>
         </BannerText>
       </BannerList>

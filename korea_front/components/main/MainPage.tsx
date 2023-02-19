@@ -2,6 +2,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import { ImgObject } from "../../common/img";
 import MainLayout from "../../layout/main/MainLayout";
 import ScrollEvent from "../ScrollEvent";
 import MainBanner from "./MainBanner";
@@ -13,9 +14,10 @@ const Container = styled.div`
 `;
 
 const MainContainer = styled.div`
-  max-width: 85%;
+  max-width: 100%;
   width: 100%;
   margin: 5rem auto;
+  /* background-color: #f9fafb; */
   &.flex {
     display: flex;
     gap: 2%;
@@ -29,13 +31,68 @@ const MainContent = styled.div`
   }
 `;
 
-const DumeContent = styled.div`
-  height: 30vh;
+const ContentCollege = styled.div`
+  height: 50vh;
+  /* width: 30vw; */
   border-radius: 5px;
   font-size: 20px;
   font-weight: bold;
-  /* box-shadow: 3px 5px 10px #00000026; */
   padding: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  margin: 5rem 0px 0px 0px;
+  background-color: #f9fafb;
+  align-items: center;
+`;
+
+const TripCollege = styled.div`
+  height: 50vh;
+  /* width: 30vw; */
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  margin: 5rem 0px 0px 0px;
+  /* background-color: #f9fafb; */
+  align-items: center;
+`;
+
+const ImgBox = styled.div`
+  background-image: url(${ImgObject.house});
+  background-position: center center;
+  background-size: cover;
+  height: 30vh;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 30vw;
+`;
+
+const TripBox = styled.div`
+  background-image: url(${ImgObject.trip});
+  background-position: center center;
+  background-size: cover;
+  height: 30vh;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 30vw;
+`;
+
+const ReviewBox = styled.div`
+  background-image: url(${ImgObject.college});
+  background-position: center center;
+  background-size: cover;
+  height: 30vh;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 30vw;
+`;
+const TextBox = styled.div`
+  width: 40vw;
+`;
+
+const TextGroup = styled.ul``;
+
+const TextList = styled.li`
+  font-size: 20px;
 `;
 
 export default function MainPage() {
@@ -62,26 +119,54 @@ export default function MainPage() {
       <Container>
         <MainBanner />
         {/* <ScrollEvent /> */}
-        <MainNavigator />
+        {/* <MainNavigator /> */}
         <MainIntrouduce />
-        <MainContainer data-aos="fade-right" className="flex">
+        <MainContainer className="flex">
           <MainContent>
-            <DumeContent>더미 컨텐츠2</DumeContent>
-          </MainContent>
-        </MainContainer>
-        <MainContainer data-aos="fade-up-left" className="flex">
-          <MainContent>
-            <DumeContent>THIS IS The course pocess for you</DumeContent>
-          </MainContent>
-        </MainContainer>
-        <MainContainer data-aos="flip-left" className="flex">
-          <MainContent>
-            <DumeContent>더미 컨텐츠3</DumeContent>
-          </MainContent>
-        </MainContainer>
-        <MainContainer data-aos="fade-up-left" className="flex">
-          <MainContent>
-            <DumeContent>더미 컨텐츠3</DumeContent>
+            <ContentCollege>
+              <ImgBox data-aos="zoom-in"></ImgBox>
+              <TextBox data-aos="fade-up-right">
+                <TextGroup>
+                  <TextList>
+                    I provide information that you are curious about Korean
+                    universities.
+                  </TextList>
+                  <TextList>
+                    Find out about education and college life in Korea.
+                  </TextList>
+                </TextGroup>
+              </TextBox>
+            </ContentCollege>
+
+            <TripCollege>
+              <TextBox data-aos="fade-up-right">
+                <TextGroup>
+                  <TextList>
+                    I provide information that you are curious about Korean
+                    universities.
+                  </TextList>
+                  <TextList>
+                    Find out about education and college life in Korea.
+                  </TextList>
+                </TextGroup>
+              </TextBox>
+              <TripBox data-aos="zoom-in"></TripBox>
+            </TripCollege>
+
+            <ContentCollege>
+              <ReviewBox data-aos="zoom-in"></ReviewBox>
+              <TextBox data-aos="fade-up-right">
+                <TextGroup>
+                  <TextList>
+                    I provide information that you are curious about Korean
+                    universities.
+                  </TextList>
+                  <TextList>
+                    Find out about education and college life in Korea.
+                  </TextList>
+                </TextGroup>
+              </TextBox>
+            </ContentCollege>
           </MainContent>
         </MainContainer>
       </Container>
