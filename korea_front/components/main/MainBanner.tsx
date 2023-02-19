@@ -16,7 +16,7 @@ const BannerList = styled.div`
   justify-content: center;
   align-items: center;
 
-  background-image: url(${ImgObject.guide});
+  /* background-image: url(${ImgObject.guide}); */
   background-position: center center;
   background-size: cover;
   filter: blur(0.5px);

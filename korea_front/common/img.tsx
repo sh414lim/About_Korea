@@ -27,5 +27,6 @@ export const ImgObject = {
     "https://images.unsplash.com/photo-1573848953384-3be02021eb0b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGxvZ2lufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
   loginNote:
     "https://images.unsplash.com/photo-1616441065241-1347e85090f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA4fHxsb2dpbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-  guide: "",
+  guide:
+    "https://images.unsplash.com/photo-1670390607636-7f776f29012c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTMwfHwlRUElQjAlOTUlRUMlOUIlOTAlRUIlOEYlODR8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
 };

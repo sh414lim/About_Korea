@@ -72,21 +72,13 @@ export default function Category() {
     <AnimatedContainer style={animationProps}>
       <Container>
         <CateGroup>
-          <Link
-            href={{ pathname: "/detail/InfoPage", query: { cate: "subway" } }}
-          >
-            <CateBox>
-              <BackImg src={ImgObject.subway} />
-            </CateBox>
-          </Link>
+          <CateBox>
+            <BackImg src={ImgObject.subway} />
+          </CateBox>
 
-          <Link
-            href={{ pathname: "/detail/InfoPage", query: { cate: "trip" } }}
-          >
-            <CateBox>
-              <BackImg src={ImgObject.trip} />
-            </CateBox>
-          </Link>
+          <CateBox>
+            <BackImg src={ImgObject.trip} />
+          </CateBox>
           <CateBox>
             <BackImg src={ImgObject.card} />
           </CateBox>
