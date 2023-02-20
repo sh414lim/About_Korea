@@ -30,3 +30,80 @@ export const ImgObject = {
   guide:
     "https://images.unsplash.com/photo-1670390607636-7f776f29012c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTMwfHwlRUElQjAlOTUlRUMlOUIlOTAlRUIlOEYlODR8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
 };
+
+export const TripData = [
+  {
+    img: "https://images.unsplash.com/photo-1571690584414-fa2a1127a2e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80",
+    title: "Bed",
+    sub: "The Best Waves in Gangwon-do",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1586996292898-71f4036c4e07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    title: "Bed",
+    sub: "The Best Waves in Gangwon-do",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1502933691298-84fc14542831?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    title: "Books",
+    sub: "The Best Waves in Gangwon-do",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1520443240718-fce21901db79?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDd8fHN1cmZ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    title: "Sink",
+    sub: "The Best Waves in Gangwon-do",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1459745930869-b3d0d72c3cbb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+    title: "Kitchen",
+    sub: "The Best Waves in Gangwon-do",
+  },
+  {
+    img: "https://plus.unsplash.com/premium_photo-1666253649209-aa2115007413?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3VyZnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    title: "Blinds",
+    sub: "The Best Waves in Gangwon-do",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1616449973117-0e1d99c56ed3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
+    title: "Books",
+    sub: "The Best Waves in Gangwon-do",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1571690584414-fa2a1127a2e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80",
+    title: "Bed",
+    sub: "The Best Waves in Gangwon-do",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1586996292898-71f4036c4e07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    title: "Bed",
+    sub: "The Best Waves in Gangwon-do",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1571690584414-fa2a1127a2e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80",
+    title: "Bed",
+    sub: "The Best Waves in Gangwon-do",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1586996292898-71f4036c4e07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    title: "Bed",
+    sub: "The Best Waves in Gangwon-do",
+  },
+
+  {
+    img: "https://images.unsplash.com/photo-1571690584414-fa2a1127a2e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80",
+    title: "Bed",
+    sub: "The Best Waves in Gangwon-do",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1586996292898-71f4036c4e07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    title: "Bed",
+    sub: "The Best Waves in Gangwon-do",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1571690584414-fa2a1127a2e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80",
+    title: "Bed",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1586996292898-71f4036c4e07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    title: "Bed",
+  },
+];

@@ -109,7 +109,7 @@ export default function Header() {
           </Link>
         </GolbalMenu>
         <GolbalMenu>
-          <Link href="/college/ListPage" className="Menu-main">
+          <Link href="/trip/ListPage" className="Menu-main">
             Product
           </Link>
         </GolbalMenu>
