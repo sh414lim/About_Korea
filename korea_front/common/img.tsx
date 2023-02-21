@@ -31,6 +31,22 @@ export const ImgObject = {
     "https://images.unsplash.com/photo-1670390607636-7f776f29012c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTMwfHwlRUElQjAlOTUlRUMlOUIlOTAlRUIlOEYlODR8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
 };
 
+export const TripDetailImg = [
+  {
+    img: "https://images.unsplash.com/photo-1586996292898-71f4036c4e07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    title: "Bed",
+    sub: "The Best Waves in Gangwon-do",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1571690584414-fa2a1127a2e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80",
+    title: "Bed",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1586996292898-71f4036c4e07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    title: "Bed",
+  },
+];
+
 export const TripData = [
   {
     img: "https://images.unsplash.com/photo-1571690584414-fa2a1127a2e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80",
