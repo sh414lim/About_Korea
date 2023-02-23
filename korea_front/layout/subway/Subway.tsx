@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { ImgObject } from "../../components/img";
 import { useSpring, animated } from "react-spring";
 import Link from "next/link";
+import { ImgObject } from "../../common/img";
 // import s from "../../public/videos"
 const Container = styled.div`
   display: flex;

@@ -69,7 +69,11 @@ const Img = styled.img`
   width: 100%;
   height: 100%;
 `;
-
+const TitleSt = styled.span`
+  margin: 0px 0px 0px 10px;
+  color: rgb(95, 106, 255);
+  font-weight: 900;
+`;
 type Props = {};
 
 export default function TripDetail({}: Props) {
@@ -81,7 +85,9 @@ export default function TripDetail({}: Props) {
           <SlidContainer>
             <IntroduceBox>
               <TitleBox>
-                <IntroTitle>Trip Planner</IntroTitle>
+                <IntroTitle>
+                  Trip Planner <TitleSt>Gang-neung</TitleSt>{" "}
+                </IntroTitle>
                 <InfroSub>
                   A city located in the eastern part of Gangwon-do. It is one of
                   the three major cities in Gangwon-do along with Wonju-si and

@@ -1,29 +1,53 @@
 import React from "react";
 import styled from "styled-components";
+import Subway from "../../layout/subway/Subway";
+import CommonCarousel from "../CommonCarousel";
+import NavInfo from "./NavInfo";
 type Props = {};
 
 const Container = styled.div`
+  margin: 7rem auto;
+`;
+
+const ImgContainer = styled.div`
   width: 100vw;
   height: 50vh;
+  display: flex;
+  justify-content: center;
+
   /* background-color: black; */
   /* background-color: hsl(0, 0%, 94.50980392156862%); */
 `;
+
+const TitmeBox = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 const Title = styled.h1`
   width: 100%;
-  max-width: 40%;
+  max-width: 20%;
   display: flex;
-  justify-content: end;
-  align-items: flex-end;
-  align-content: flex-end;
   height: 30%;
   font-size: 35px;
-  font-weight: 700;
+  font-weight: 600;
+`;
+const TitleSt = styled.span`
+  margin: 0px 0px 0px 10px;
+  color: rgb(95, 106, 255);
+  font-weight: 900;
 `;
 
 export default function NavTrip({}: Props) {
   return (
     <Container>
-      <Title>Tourist attractions and attractions</Title>
+      <TitmeBox>
+        <Title>Select a travel THEME</Title>
+      </TitmeBox>
+
+      <ImgContainer>
+        <NavInfo />
+      </ImgContainer>
     </Container>
   );
 }

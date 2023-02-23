@@ -8,14 +8,14 @@ import Link from "next/link";
 import { useSpring, animated } from "react-spring";
 import { ImgObject } from "../common/img";
 
-
-const CateImg = styled.img`
+const CateImg = styled.div`
   object-fit: cover;
-  width: 60vw;
-  height: 70vh;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  width: 19vw;
+  height: 40vh;
+  background-image: url(${ImgObject.trip});
+  background-position: center center;
+  background-size: cover;
+
   &:hover {
     z-index: 1;
     transition: 1.3s;
@@ -25,8 +25,25 @@ const CateImg = styled.img`
 
 const Container = animated(styled.div`
   height: 70vh;
-  width: 100vw;
+  width: 90%;
+  margin: 0px 0px 0px 8rem;
 `);
+const Title = styled.h1`
+  width: 100%;
+  max-width: 40%;
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  align-content: flex-end;
+  height: 30%;
+  font-size: 35px;
+  font-weight: 400;
+`;
+const TitleSt = styled.span`
+  margin: 0px 0px 0px 10px;
+  color: rgb(95, 106, 255);
+  font-weight: 900;
+`;
 
 export default function CommonCarousel() {
   const animationProps = useSpring({
@@ -44,39 +61,61 @@ export default function CommonCarousel() {
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         navigation={true}
-        slidesPerView={2}
-        spaceBetween={30}
+        slidesPerView={4}
+        // spaceBetween={30}
         autoplay={true}
         loop={true}
-        centeredSlides={true}
-        pagination={{
-          clickable: true,
-        }}
+        // centeredSlides={true}
+        pagination={
+          {
+            // clickable: true,
+          }
+        }
         className="mySwiper"
       >
         <SwiperSlide>
           <Link href="/">
-            <CateImg src={ImgObject.card} />
+            <CateImg />
           </Link>
         </SwiperSlide>
         <SwiperSlide>
           <Link href="/">
-            <CateImg src={ImgObject.subwayInfo} />
+            <CateImg />
           </Link>
         </SwiperSlide>
         <SwiperSlide>
           <Link href="/">
-            <CateImg src={ImgObject.taxi} />
+            <CateImg />
           </Link>
         </SwiperSlide>
         <SwiperSlide>
           <Link href="/">
-            <CateImg src={ImgObject.tcard} />
+            <CateImg />
           </Link>
         </SwiperSlide>
         <SwiperSlide>
           <Link href="/">
-            <CateImg src={ImgObject.trip} />
+            <CateImg />
+          </Link>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Link href="/">
+            <CateImg />
+          </Link>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Link href="/">
+            <CateImg />
+          </Link>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Link href="/">
+            <CateImg />
+          </Link>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Link href="/">
+            <CateImg />
           </Link>
         </SwiperSlide>
       </Swiper>
