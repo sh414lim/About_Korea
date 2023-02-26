@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Subway from "../../layout/subway/Subway";
 import CommonCarousel from "../CommonCarousel";
 import NavInfo from "./NavInfo";
+import TripList from "./TripList";
+import TripView from "./TripView";
 type Props = {};
 
 const Container = styled.div`
@@ -41,11 +43,11 @@ const TitleSt = styled.span`
 export default function NavTrip({}: Props) {
   return (
     <Container>
-      <TitmeBox>{/* <Title>Select a travel THEME</Title> */}</TitmeBox>
-
       <ImgContainer>
         <NavInfo />
       </ImgContainer>
+      <TripList />
+      <TripView />
     </Container>
   );
 }

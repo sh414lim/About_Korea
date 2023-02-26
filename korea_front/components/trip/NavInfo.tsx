@@ -12,6 +12,9 @@ import AddLocationIcon from "@mui/icons-material/AddLocation";
 const CateImg = styled.div`
   object-fit: cover;
   position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: flex-end;
   width: 15vw;
   max-width: 90%;
   height: 40vh;
@@ -19,9 +22,7 @@ const CateImg = styled.div`
   background-position: center center;
   background-size: cover;
   margin: 3rem 1rem 1rem 1rem;
-  display: flex;
-  justify-content: start;
-  align-items: flex-end;
+
   ::before {
     width: 19vw;
     height: 40vh;
@@ -44,10 +45,12 @@ const CateImg = styled.div`
 `;
 
 const Container = animated(styled.div`
-  height: 70vh;
-  width: 90vw;
+  height: 50vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
+  background-color: #f1efef;
+  margin: 0px 0px 5rem 0px;
 `);
 
 const Title = styled.h1`
