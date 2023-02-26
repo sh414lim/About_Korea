@@ -41,9 +41,7 @@ const TitleSt = styled.span`
 export default function NavTrip({}: Props) {
   return (
     <Container>
-      <TitmeBox>
-        <Title>Select a travel THEME</Title>
-      </TitmeBox>
+      <TitmeBox>{/* <Title>Select a travel THEME</Title> */}</TitmeBox>
 
       <ImgContainer>
         <NavInfo />
