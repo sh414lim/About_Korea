@@ -47,7 +47,8 @@ export default function NavTrip({}: Props) {
         <NavInfo />
       </ImgContainer>
       <TripList />
-      <TripView />
+      {/* <TripView /> */}
+      <CommonCarousel />
     </Container>
   );
 }

@@ -28,21 +28,28 @@ const Container = animated(styled.div`
   width: 90%;
   margin: 0px 0px 0px 8rem;
 `);
-const Title = styled.h1`
-  width: 100%;
-  max-width: 40%;
+const ListTitleBox = styled.div`
+  width: 80%;
+  height: 5vh;
   display: flex;
-  justify-content: end;
-  align-items: flex-end;
-  align-content: flex-end;
-  height: 30%;
-  font-size: 35px;
-  font-weight: 400;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 10px 2rem 10px;
 `;
-const TitleSt = styled.span`
-  margin: 0px 0px 0px 10px;
-  color: rgb(95, 106, 255);
+
+const ListSub = styled.div`
+  font-size: 17px;
+  opacity: 0.5;
+  display: flex;
+`;
+
+const ListTitle = styled.span`
+  font-size: 30px;
   font-weight: 900;
+  align-content: center;
+  align-content: center;
+  justify-content: center;
 `;
 
 export default function CommonCarousel() {
@@ -58,6 +65,12 @@ export default function CommonCarousel() {
   });
   return (
     <Container style={animationProps}>
+      <ListTitleBox>
+        <ListTitle>
+          Recommended View
+          <ListSub>Recommended travel destinations for BEACT </ListSub>
+        </ListTitle>
+      </ListTitleBox>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         navigation={true}

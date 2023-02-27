@@ -45,7 +45,7 @@ export default function TripView({}: Props) {
     <Container>
       <ListTitleBox>
         <ListTitle>
-          Recommended Tours
+          Recommended View
           <ListSub>Recommended travel destinations for BEACT </ListSub>
         </ListTitle>
         <ListSub>

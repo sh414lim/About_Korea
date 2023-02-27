@@ -49,7 +49,7 @@ const Container = animated(styled.div`
   width: 100vw;
   display: flex;
   justify-content: center;
-  background-color: #f1efef;
+  background-color: #f9fafb;
   margin: 0px 0px 5rem 0px;
 `);
 
